@@ -5,7 +5,7 @@ const NavigationPanel = () => {
 		<>
 			<div>
 
-				<PrimaryLogo />
+				<PrimaryLogo className='primary-logo'/>
 
 				<div>Dark mode</div>
 				<h1>Hi intern!</h1>
