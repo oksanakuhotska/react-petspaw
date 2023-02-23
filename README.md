@@ -1,3 +1,18 @@
+React  
+`npx create-react-app my-app`
+`cd my-app`
+`npm start`
+
+React Router  
+`npm install react-router-dom`
+
+Props Type  
+`npm install --save prop-types`
+
+Styled Component 
+`npm install --save styled-components`
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
