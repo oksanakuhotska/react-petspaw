@@ -1,6 +1,6 @@
 import { ReactComponent as PrimaryLogo} from '../../assets/images/logo.svg';
 
-import { Link, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 
 import Voting from '../Voting';
 import Breeds from '../Breeds';
@@ -11,22 +11,22 @@ const NavigationPanel = () => {
 		<>
 			<div>
 
-				<PrimaryLogo />
+				<Link to='/'><PrimaryLogo /></Link>
 
 				<div>Dark mode</div>
 				<h1>Hi intern!</h1>
 				<p>Welcome to MI 2022 Front-end test</p>
 				<p>Lets start using The Cat API</p>
 				
-				<Link to='/voting'>
+				<NavLink to='/voting'>
 					<Voting />
-				</Link>
-				<Link to='/breeds'>
+				</NavLink>
+				<NavLink to='/breeds'>
 					<Breeds />
-				</Link>
-				<Link to='/gallery'>
+				</NavLink>
+				<NavLink to='/gallery'>
 					<Gallery />
-				</Link>
+				</NavLink>
 				<Outlet/>
 			</div>
 		</>
