@@ -1,15 +1,15 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import NavigationPanel from "./pages/NavigationPanel/navigationPanel.component";
+import NavigationPanel from "../NavigationPanel/navigationPanel.component";
 
-import ErrorPage from "./pages/Error-Page/error-page.component";
-import Home from "./pages/Home/home.component";
-import Voting from "./pages/Voting/voting.component";
-import Breeds from "./pages/Breeds/breeds.component";
-import Gallery from "./pages/Gallery/gallery.component";
-import BreedsSorted from "./pages/BreedsSorted/breedsSorted.component";
+import ErrorPage from "../Error-Page/error-page.component";
+import Home from "../Home/home.component";
+import Voting from "../Voting/voting.component";
+import Breeds from "../Breeds/breeds.component";
+import Gallery from "../Gallery/gallery.component";
+import BreedsSorted from "../BreedsSorted/breedsSorted.component";
 
-import { GlobalStyle } from "./global.styles";
+import { GlobalStyle } from "../../global.styles";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +21,7 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
           {
+            path: "/",
             element: <Home />,
             index: true,
           },
@@ -50,7 +51,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <RouterProvider router={router} />
+        <RouterProvider router={router} />
     </>
   );
 }
