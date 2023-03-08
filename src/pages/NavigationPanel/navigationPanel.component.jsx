@@ -5,11 +5,12 @@ import { Link, NavLink, Outlet } from 'react-router-dom';
 import Voting from '../Voting/voting.component';
 import Breeds from '../Breeds/breeds.component';
 import Gallery from '../Gallery/gallery.component';
+import { Container, SideBar, Pages } from './navigationPanel.styles';
 
 const NavigationPanel = () => {
 	return(
-		<>
-			<div>
+		<Container>
+			<SideBar>
 
 				<Link to='/'><PrimaryLogo /></Link>
 
@@ -27,9 +28,11 @@ const NavigationPanel = () => {
 				<NavLink to='/gallery'>
 					<Gallery />
 				</NavLink>
-				<Outlet/>
-			</div>
-		</>
+			</SideBar>
+			<Pages>Hello everybody
+          <Outlet/>
+      </Pages>
+		</Container>
 	)
 };
 
