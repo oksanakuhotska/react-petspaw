@@ -2,9 +2,9 @@ import { ReactComponent as PrimaryLogo} from '../../assets/images/logo.svg';
 
 import { Link, NavLink, Outlet } from 'react-router-dom';
 
-import Voting from '../Voting';
-import Breeds from '../Breeds';
-import Gallery from '../Gallery';
+import Voting from '../Voting/voting.component';
+import Breeds from '../Breeds/breeds.component';
+import Gallery from '../Gallery/gallery.component';
 
 const NavigationPanel = () => {
 	return(
