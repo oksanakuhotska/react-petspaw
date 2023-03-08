@@ -6,6 +6,7 @@ import Voting from '../Voting/voting.component';
 import Breeds from '../Breeds/breeds.component';
 import Gallery from '../Gallery/gallery.component';
 import { Container, SideBar, Pages } from './navigationPanel.styles';
+import NavCards from '../../components/NavCards/navCards.component';
 
 const NavigationPanel = () => {
 	return(
@@ -19,7 +20,7 @@ const NavigationPanel = () => {
 				<p>Welcome to MI 2022 Front-end test</p>
 				<p>Lets start using The Cat API</p>
 				
-				<NavLink to='/voting'>
+				{/* <NavLink to='/voting'>
 					<Voting />
 				</NavLink>
 				<NavLink to='/breeds'>
@@ -27,7 +28,8 @@ const NavigationPanel = () => {
 				</NavLink>
 				<NavLink to='/gallery'>
 					<Gallery />
-				</NavLink>
+				</NavLink> */}
+			<NavCards />
 			</SideBar>
 			<Pages>Hello everybody
           <Outlet/>
