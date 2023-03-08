@@ -18,32 +18,29 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/",
-        element: <Home />,
-        errorElement: <ErrorPage />,
-        index: true,
-      },
-      {
-        path: "voting",
-        element: <Voting />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "breeds",
-        element: <Breeds />,
         errorElement: <ErrorPage />,
         children: [
           {
+            element: <Home />,
+            index: true,
+          },
+          {
+            path: "voting",
+            element: <Voting />,
+          },
+          {
+            path: "breeds",
+            element: <Breeds />,
+          },
+          {
             path: "sorted",
             element: <BreedsSorted />,
-            errorElement: <ErrorPage />,
+          },
+          {
+            path: "gallery",
+            element: <Gallery />,
           },
         ],
-      },
-      {
-        path: "gallery",
-        element: <Gallery />,
-        errorElement: <ErrorPage />,
       },
     ],
   },
