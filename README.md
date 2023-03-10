@@ -12,6 +12,17 @@ Props Type
 Styled Component 
 `npm install --save styled-components`
 
+## React Snippets ## 
+(https://github.com/ults-io/vscode-react-javascript-snippets/blob/HEAD/docs/Snippets.md)
+
+`rfce` 
+** import React from 'react'
+
+function $1() {
+  return <div>$0</div>
+}
+
+export default $1 **
 
 # Getting Started with Create React App
 
