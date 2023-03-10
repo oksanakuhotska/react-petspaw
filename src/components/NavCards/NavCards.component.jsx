@@ -1,10 +1,12 @@
 import React from 'react';
-import NavCard from '../NavCard/navCard.component';
 import VoteImg from "../../assets/images/votetable.png";
 import BreedsImg from "../../assets/images/breeds.png";
 import GalleryImg from "../../assets/images/gallery.png";
-import { Container } from './navCards.styles';
-import { CARD_TYPE_CLASSES } from '../NavCard/navCard.component';
+
+import NavCard from '../NavCard/navCard.component';
+import { CARD_TYPE_CLASSES } from '../nav-card-body/nav-card-body.component';
+
+import { Container } from './NavCards.styles';
 
 const categories = [
   {
@@ -12,7 +14,7 @@ const categories = [
     title: 'voting',
     imageUrl: VoteImg,
     route: 'voting',
-    cardBodyType: "CARD_TYPE_CLASSES.voting",
+    cardBodyType: CARD_TYPE_CLASSES.voting,
   },
   {
     id: 2,
@@ -34,7 +36,7 @@ const NavCards = () => {
 	return (
 			<Container>
         {categories.map((category) => (
-          <NavCard key={category.id} category={category} cardBodyType={category.cardBodyType} />
+          <NavCard key={category.id} category={category} />
         ))}
 			</Container>
 	)
