@@ -1,13 +1,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import NavigationPanel from "../NavigationPanel/navigationPanel.component";
+import NavigationPanel from "../Navigation-Panel/navigation-panel.component";
 
 import ErrorPage from "../Error-Page/error-page.component";
 import Home from "../Home/home.component";
 import Voting from "../Voting/voting.component";
 import Breeds from "../Breeds/breeds.component";
 import Gallery from "../Gallery/gallery.component";
-import BreedsSorted from "../BreedsSorted/breedsSorted.component";
+import BreedsSorted from "../Breeds-Sorted/breeds-sorted.component";
 
 import { GlobalStyle } from "../../global.styles";
 
