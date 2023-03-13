@@ -10,16 +10,6 @@ export const BaseCardBody = styled.div`
 		border: 4px solid rgba(255, 255, 255, 0.6);
 		border-radius: var(--border-radius-secondary);
 		margin-bottom: 10px;
-
-		&:hover {
-			border: 4px solid var(--white-color);
-			transition: var(--transition);
-		}
-
-		&:active {
-			border: 4px solid var(--secondary-color);
-			transition: var(--transition);
-		}
 	}
 `;
 BaseCardBody.displayName = "BaseCardBody";
