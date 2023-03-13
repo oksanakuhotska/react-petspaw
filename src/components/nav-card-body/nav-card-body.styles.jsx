@@ -8,18 +8,17 @@ export const BaseCardBody = styled.div`
 		align-items: center;
 		justify-content: center;
 		border: 4px solid rgba(255, 255, 255, 0.6);
-		border-radius: 20px;
+		border-radius: var(--border-radius-secondary);
 		margin-bottom: 10px;
-		background-color: antiquewhite;
 
 		&:hover {
-			border: 4px solid #fff;
-			/* transition: var(--transition); */
+			border: 4px solid var(--white-color);
+			transition: var(--transition);
 		}
 
 		&:active {
-			border: 4px solid #FBE0DC;
-			/* transition: var(--transition); */
+			border: 4px solid var(--secondary-color);
+			transition: var(--transition);
 		}
 	}
 `;
@@ -27,21 +26,21 @@ BaseCardBody.displayName = "BaseCardBody";
 
 export const VotingCardBody = styled(BaseCardBody)`
   @media (min-width: 768px) {
-		background-color: #B4B7FF;
+		background-color: var(--info-color);
 	}
 `;
 VotingCardBody.displayName = "VotingCardBody";
 
 export const BreedsCardBody = styled(BaseCardBody)`
   @media (min-width: 768px) {
-		background-color: #97EAB9;
+		background-color: var(--success-color);
 	}
 `;
 BreedsCardBody.displayName = "BreedsCardBody";
 
 export const GalleryCardBody = styled(BaseCardBody)`
   @media (min-width: 768px) {
-		background-color: #FFD280;
+		background-color: var(--warning-color);
 	}
 `;
 GalleryCardBody.displayName = "GalleryCardBody";
