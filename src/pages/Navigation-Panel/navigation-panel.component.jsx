@@ -5,8 +5,8 @@ import { Link, Outlet } from 'react-router-dom';
 // import Voting from '../Voting/voting.component';
 // import Breeds from '../Breeds/breeds.component';
 // import Gallery from '../Gallery/gallery.component';
-import { Container, SideBar, Pages } from './navigationPanel.styles';
-import NavCards from '../../components/NavCards/NavCards.component';
+import { Container, SideBar, Pages } from './navigation-panel.styles';
+import NavCards from '../../components/Nav-Cards/nav-cards.component';
 
 const NavigationPanel = () => {
 	return(

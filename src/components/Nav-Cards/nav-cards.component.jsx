@@ -3,10 +3,10 @@ import VoteImg from "../../assets/images/votetable.png";
 import BreedsImg from "../../assets/images/breeds.png";
 import GalleryImg from "../../assets/images/gallery.png";
 
-import NavCard from '../NavCard/navCard.component';
+import NavCard from '../Nav-Card/nav-card.component';
 import { CARD_TYPE_CLASSES } from '../nav-card-body/nav-card-body.component';
 
-import { Container } from './NavCards.styles';
+import { Container } from './nav-cards.styles';
 
 const categories = [
   {
