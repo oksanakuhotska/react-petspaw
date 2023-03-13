@@ -1,4 +1,6 @@
 import { useNavigate } from 'react-router-dom';
+
+import Button from '../button/button.component';
 import CardBody from '../nav-card-body/nav-card-body.component';
 
 import { Card, CardImage } from './navCard.styles';
@@ -13,7 +15,7 @@ const NavCard = ({category}) => {
 				<CardBody cardBodyType={cardBodyType} >
 					<CardImage src={imageUrl} alt={title} />
 				</CardBody>
-				<button onClick={onNavigateHandler}>{title}</button>
+				<Button onClick={onNavigateHandler}>{title}</Button>
 			</Card>
 	)
 }
