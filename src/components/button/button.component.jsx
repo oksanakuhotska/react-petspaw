@@ -1,7 +1,7 @@
 import { 
 	BaseButton, 
 	NavCardButton, 
-	CardImgButoon, 
+	CardImgButton, 
 	IconButton, 
 } from './button.styles';
 
@@ -17,7 +17,7 @@ const getButton = (buttonType = BUTTON_TYPE_CLASSES.base) => (
 		[BUTTON_TYPE_CLASSES.base]: BaseButton,
 		[BUTTON_TYPE_CLASSES.navcard]: NavCardButton,
 		[BUTTON_TYPE_CLASSES.icon]: IconButton,
-		[BUTTON_TYPE_CLASSES.card]: CardImgButoon,
+		[BUTTON_TYPE_CLASSES.card]: CardImgButton,
 	}[buttonType]
 );
 
