@@ -16,7 +16,7 @@ export const BaseButton = styled.button`
 	font-size: 20px;
 	letter-spacing: 2px;
 	text-decoration: none;
-	font-family: inherit;
+	font-family: var(--font-family);
 	text-transform: uppercase;
 	font-weight: 500;
 	border: none;
