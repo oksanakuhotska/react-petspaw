@@ -1,11 +1,13 @@
 import homeImg from "../../assets/images/girl-and-pet.png";
 
+import { HomeImage, Overlay } from "./home.styles";
+
 const Home = () => {
 	return (
-		<>
-			<h2>Home</h2>
-			<img src={homeImg} alt="girl-and-pet.png" />
-		</>
+		<div>
+			<HomeImage src={homeImg} alt="girl-and-pet.png" />
+			<Overlay></Overlay>
+		</div>
 	);
 };
 
