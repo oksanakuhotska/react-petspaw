@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-/* @import url('https://fonts.googleapis.com/css?family=Jost:regular,500&display=swap'); */
 
 	:root {
 		--accent-color: #FF868E;
