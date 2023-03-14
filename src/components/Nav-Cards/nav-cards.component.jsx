@@ -33,12 +33,13 @@ const categories = [
 ];
 
 const NavCards = () => {
+	
 	return (
-			<Container>
-        {categories.map((category) => (
-          <NavCard key={category.id} category={category} />
-        ))}
-			</Container>
+		<Container>
+			{categories.map((category) => (
+				<NavCard key={category.id} category={category} />
+			))}
+		</Container>
 	)
 }
 
