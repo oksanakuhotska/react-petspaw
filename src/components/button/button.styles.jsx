@@ -41,16 +41,6 @@ export const NavCardButton = styled(BaseButton)`
 	font-size: 12px;
 	line-height: 133.33%;
 	background-color: var(--white-color);
-	
-	/* &:hover {
-		background-color: var(--secondary-color);
-		color: var(--accent-color);
-	}
-
-	&:active {
-		color: var(--white-color);
-		background-color: var(--accent-color);
-	} */
 `;
 NavCardButton.displayName = 'NavCardButton';
 
