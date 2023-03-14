@@ -1,8 +1,26 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
+	:root {
+	--accent-color: #FF868E;
+	--secondary-color: #FBE0DC;
+	--success-color: #97EAB9;
+	--warning-color: #FFD280;
+	--info-color: #B4B7FF;
+	--light-color: #ffffff;
+	--dark-color: #1D1D1D;
+	--medium-grey-color: #8C8C8C;
+	--light-grey-color: #F8F8F7;
+	--white-color: #ffffff;
 
-	html {
+	--border-radius-base: 20px;
+	--border-radius-secondary: 10px;
+	--transition: all 0.15s ease 0s;
+	--transition-lazy: all 0.8s else 0s;
+}
+
+
+html {
 		box-sizing: border-box;
 		scroll-behavior: smooth;
 		margin: 0;
@@ -24,24 +42,6 @@ export const GlobalStyle = createGlobalStyle`
 
 	transition: var(--transition);
 	}
-
-	:root {
-	--accent-color: #FF868E;
-	--secondary-color: #FBE0DC;
-	--success-color: #97EAB9;
-	--warning-color: #FFD280;
-	--info-color: #B4B7FF;
-	--light-color: #ffffff;
-	--dark-color: #1D1D1D;
-	--medium-grey-color: #8C8C8C;
-	--light-grey-color: #F8F8F7;
-	--white-color: #ffffff;
-
-	--border-radius-base: 20px;
-	--border-radius-secondary: 10px;
-	--transition: all 0.15s ease 0s;
-	--transition-lazy: all 0.8s else 0s;
-}
 `;
 
 
