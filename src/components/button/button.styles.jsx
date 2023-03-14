@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import  { BaseCardBody } from '../nav-card-body/nav-card-body.styles';
-
 export const BaseButton = styled.button`
 	min-width: 143px;
 	width: auto;
@@ -44,7 +42,7 @@ export const NavCardButton = styled(BaseButton)`
 	line-height: 133.33%;
 	background-color: var(--white-color);
 	
-	&:hover {
+	/* &:hover {
 		background-color: var(--secondary-color);
 		color: var(--accent-color);
 	}
@@ -52,21 +50,7 @@ export const NavCardButton = styled(BaseButton)`
 	&:active {
 		color: var(--white-color);
 		background-color: var(--accent-color);
-	}
-
-	&:hover {
-		& + ${BaseCardBody} {
-		border: 4px solid var(--white-color);
-		transition: var(--transition);
-	}
-	}
-
-	&:active {
-		& + ${BaseCardBody} {
-			border: 4px solid var(--secondary-color);
-			transition: var(--transition);
-		}
-	}
+	} */
 `;
 NavCardButton.displayName = 'NavCardButton';
 
