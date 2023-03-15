@@ -70,6 +70,7 @@ export const IconButtonInverted = styled(IconButton)`
 `;
 IconButton.displayName = 'IconButton';
 
+//кнопка для грід-картинки
 export const CardImgButton = styled(BaseButton)`
 	width: 85%;
 	height: 34px;
@@ -79,3 +80,38 @@ export const CardImgButton = styled(BaseButton)`
 	text-transform: none;
 `;
 CardImgButton.displayName = 'CardImgButton';
+
+//кнопка реакцій history reactions
+export const ReactionHistoryButton = styled(BaseButton)`
+  width: 60px;
+  height: 60px;
+  background-color: var(--light-color);
+  border-radius: var(--border-radius-base);
+  fill: var(--accent-color);
+
+	svg {
+		width: 30px;
+  	height: 30px;
+	}
+
+	&:hover {
+		background-color: var(--secondary-color);
+	}
+
+	&:active {
+		background-color: var(--accent-color);
+		fill: var(--light-color);
+	}	
+`
+
+ReactionHistoryButton.displayName = 'ReactionHistoryButton';
+
+export const UserReactionsButton = styled(ReactionHistoryButton)`
+	fill: var(--white-color);
+
+	@media (min-width: 768px) {
+		width: 80px;
+		height: 80px;
+	}
+`
+UserReactionsButton.displayName = 'UserReactionsButton';
