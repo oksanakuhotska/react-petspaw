@@ -30,6 +30,7 @@ export const GlobalStyle = createGlobalStyle`
 	body {
 		min-width: 320px;
 		overflow: auto;
+		
 		font-size: 16px;
 		font-family: var(--font-family);
 
