@@ -1,18 +1,9 @@
+import Button, { BUTTON_TYPE_CLASSES } from '../buttons/button.component';
+import { Icon } from "../icon/icon.component";
+
 import { SearchContainer, SearchForm, SearchInput } from "./search.styles";
-import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
-
-
-const url = '../../assets/images/sprite.svg';
-
-
-const Icon = (props) => (
-  <svg>
-    <use xlinkHref={`${url}#${props.icon}`} />
-  </svg>
-);
 
 const Search = () => {
-
 
   return (
     <SearchContainer> 
@@ -27,13 +18,9 @@ const Search = () => {
           aria-label="Search cats"
         />
         <Button buttonType={BUTTON_TYPE_CLASSES.reactionhistory} type="submit">
-          <svg>
-            <use xlinkHref="../../assets/images/sprite.svg#search"></use>
-          </svg>
           <Icon icon="search" />
         </Button>
       </SearchForm>
-    
     </SearchContainer>
   )
 }
