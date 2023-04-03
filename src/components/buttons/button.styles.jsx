@@ -91,7 +91,8 @@ export const ReactionHistoryButton = styled(BaseButton)`
 
 	svg {
 		width: 30px;
-  	height: 30px;
+		height: 30px;
+
 	}
 
 	&:hover {
