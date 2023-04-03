@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
+import Button, { BUTTON_TYPE_CLASSES } from '../buttons/button.component';
 import CardBody from '../nav-card-body/nav-card-body.component';
 
 import { Card, CardImage } from './nav-card.styles';
