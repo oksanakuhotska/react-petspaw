@@ -7,6 +7,8 @@ import SideBarMain from '../../components/side-bar-main/side-bar-main.component'
 import { Container, SideBar, Pages } from './navigation-panel.styles';
 
 const NavigationPanel = () => {
+	
+
 	return(
 		<Container>
 			<SideBar>
