@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const BaseCardBody = styled.div`
+	display: none;
+
   @media (min-width: 768px) {
 		height: 198px;
 		width: 100%;

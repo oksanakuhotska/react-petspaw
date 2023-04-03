@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-
 	display: grid;
 	gap: 30px;
 	grid-template-columns: 1fr;
@@ -11,7 +10,7 @@ export const Container = styled.div`
 	justify-content: space-between;
 	font-family: Jost, sans-serif;
 
-	@media (min-width: 996px) {
+	@media (min-width: 1120px) {
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: 1fr;
 	}
@@ -27,7 +26,7 @@ export const SideBar = styled.div`
 
 	padding: 30px;
 
-	@media (min-width: 1170px) {
+	@media (min-width: 1120px) {
 		flex: 0 1 50%;
 	}
 `;
@@ -35,6 +34,10 @@ SideBar.displayName = 'AppSideBar';
 
 export const Pages = styled.div`
   /* flex: 0 1 50%; */
-`;
+	display: none;
 
+	@media (min-width: 1120px) {
+		display: block;
+	}
+`;
 Pages.displayName = 'AppPages';
