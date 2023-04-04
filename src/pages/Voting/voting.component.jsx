@@ -1,10 +1,10 @@
-import PagesHeader from "../../components/page's-header/page's-header.component";
+import PagesLayout from "../../components/pages/layout/layout.component";
 
 
 const Voting = () => {
 	return (
 		<>
-			<PagesHeader />
+			<PagesLayout />
 			<h2>Voting</h2>
 		</>
 	);
