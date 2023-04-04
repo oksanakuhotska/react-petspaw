@@ -1,7 +1,9 @@
 import sprite from '../../assets/images/sprite.svg'
 
-export const Icon = ({ icon }) => (
+const SpriteIcon = ({ icon }) => (
 	<svg>
 		<use href={`${sprite}#${icon}`} />
 	</svg>
 );
+
+export default SpriteIcon;
