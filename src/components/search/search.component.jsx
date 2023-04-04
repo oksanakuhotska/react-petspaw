@@ -1,6 +1,6 @@
 
 import IconButton, { ICON_BUTTON_TYPE_CLASSES } from '../buttons/iconButton/iconButton.component';
-import { Icon } from "../icon/icon.component";
+import SpriteIcon from "../icon/icon.component";
 
 import { SearchContainer, SearchForm, SearchInput } from "./search.styles";
 
@@ -19,7 +19,7 @@ const Search = () => {
           aria-label="Search cats"
         />
         <IconButton buttonType={ICON_BUTTON_TYPE_CLASSES.base} type="submit">
-          <Icon icon="search" />
+          <SpriteIcon icon="search" />
         </IconButton>
       </SearchForm>
     </SearchContainer>

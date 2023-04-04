@@ -16,6 +16,7 @@ export const SearchContainer = styled.div`
 SearchContainer.displayName = 'SearchContainer';
 
 export const SearchForm = styled(Form)`
+	padding-right: 10px;
   min-width: 180px;
 	max-height: 60px;
 	background-color: var(--white-color);
