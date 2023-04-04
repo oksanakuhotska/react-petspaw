@@ -1,4 +1,5 @@
-import Button, { BUTTON_TYPE_CLASSES } from '../buttons/button.component';
+
+import IconButton, { ICON_BUTTON_TYPE_CLASSES } from '../buttons/iconButton/iconButton.component';
 import { Icon } from "../icon/icon.component";
 
 import { SearchContainer, SearchForm, SearchInput } from "./search.styles";
@@ -17,9 +18,9 @@ const Search = () => {
           name="user-search-request"
           aria-label="Search cats"
         />
-        <Button buttonType={BUTTON_TYPE_CLASSES.reactionhistory} type="submit">
+        <IconButton buttonType={ICON_BUTTON_TYPE_CLASSES.base} type="submit">
           <Icon icon="search" />
-        </Button>
+        </IconButton>
       </SearchForm>
     </SearchContainer>
   )
