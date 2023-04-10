@@ -23,8 +23,7 @@ export const SideBar = styled.div`
 	justify-content: center;
 	align-items: center;
 	flex: 0 1 100%;
-
-	padding: 30px;
+	padding: 30px 0px 30px 30px;
 
 	@media (min-width: 1120px) {
 		flex: 0 1 50%;
@@ -35,9 +34,11 @@ SideBar.displayName = 'AppSideBar';
 export const Pages = styled.div`
   /* flex: 0 1 50%; */
 	display: none;
+	padding: 30px;
 
 	@media (min-width: 1120px) {
 		display: block;
+		padding: 30px 30px 30px 0px;
 	}
 `;
 Pages.displayName = 'AppPages';

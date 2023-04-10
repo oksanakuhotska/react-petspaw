@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { BaseCardBody } from '../nav-card-body/nav-card-body.styles';
-import { NavCardButton } from "../button/button.styles";
+import { NavCardButton } from '../buttons/textButton/textButton.styles';
 
 export const Card = styled.div`
 	width: 100%;
