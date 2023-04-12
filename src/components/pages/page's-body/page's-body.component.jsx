@@ -7,7 +7,9 @@ const PagesBody = () => {
   return (
     <Container>
       <div>HEADER</div>
+			<Body>
 				<CatsDirectory />
+			</Body>
     </Container>
   )
 }
