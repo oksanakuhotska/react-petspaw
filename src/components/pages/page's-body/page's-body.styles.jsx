@@ -8,6 +8,22 @@ export const Container = styled.div`
 
 	/* overflow: hidden; */
 
+	/* overflow: auto;
+	-ms-overflow-style: none;
+  scrollbar-width: none;
+
+	&::-webkit-scrollbar {
+		width: 0;
+		height: 0;
+		
+	} */
+`;
+
+Container.displayName = 'PagesBody';
+
+export const Body = styled.div`
+	height: 95%;
+	width: 100%;	
 	overflow: auto;
 	-ms-overflow-style: none;
   scrollbar-width: none;
@@ -18,10 +34,4 @@ export const Container = styled.div`
 		
 	}
 `;
-
-Container.displayName = 'PagesBody';
-
-export const Body = styled.div`
-
-`;
-Body.displayName = 'PagesGridBody';
+Body.displayName = 'GridBody';
