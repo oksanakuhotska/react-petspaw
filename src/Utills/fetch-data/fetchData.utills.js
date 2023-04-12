@@ -19,6 +19,9 @@ export const url = `https://api.thecatapi.com/v1/images/search?limit=20&has_bree
 
 
 export const getData = async (url) => {
-	const response = await fetch(url);
+	const response = await fetch(
+		url, 
+		{ method: "GET"}
+	);
 	return await response.json();
 };
