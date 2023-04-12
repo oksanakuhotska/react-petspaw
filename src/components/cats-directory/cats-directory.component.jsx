@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
+
 import { getData, url } from "../../Utills/fetch-data/fetchData.utills";
+
+import { DirectoryContainer, ImageContainer, } from "./cats-directory.styles";
 
 // `https://api.thecatapi.com/v1/images/search?limit=20&has_breeds=1&api_key=live_5kUSd1JtpPS034duZAAySNladWpg9zfRH6nbqcD81xdkmtDXeu3ulbPrFnP58P2A`
 
@@ -26,16 +29,16 @@ const CatsDirectory = () => {
   }, [])
 
   return (
-    <div>
+    <DirectoryContainer>
       {cats.map((cats) => {
 
         return (
-					<div key={cats.id}>
+					<ImageContainer key={cats.id}>
 						<img src={cats.url} alt={cats.breeds[0].name} />
-					</div>
+					</ImageContainer>
         )
       })}
-    </div>
+    </DirectoryContainer>
   )
 }
 
