@@ -1,11 +1,11 @@
-import CatsDirectory from "../../components/cats-directory/cats-directory.component";
+
+import PagesBody from "../../components/pages/page's-body/page's-body.component";
 
 const Breeds = () => {
 	return (
 		<>
-			
 			<h2>BREEDS</h2>
-			<CatsDirectory />
+			<PagesBody />
 		</>
 	);
 };
