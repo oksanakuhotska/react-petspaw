@@ -18,6 +18,9 @@ export const Container = styled.div`
 Container.displayName = 'AppContainer';
 
 export const SideBar = styled.div`
+	position: sticky;
+  top: 30px;
+
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -27,6 +30,7 @@ export const SideBar = styled.div`
 
 	@media (min-width: 1120px) {
 		flex: 0 1 50%;
+		justify-content: flex-start;
 	}
 `;
 SideBar.displayName = 'AppSideBar';
