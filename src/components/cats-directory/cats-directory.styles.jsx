@@ -6,6 +6,12 @@ export const DirectoryContainer = styled.div`
 	grid-auto-rows: 90%;
   gap: 20px;
 	grid-auto-flow: dense;
+	padding: 20px;
+	
+	/* overflow-y: scroll;
+	height: 100%;
+	width: 96%;
+	padding-right: 45px; */
 
 	@media (min-width: 768px) {
 		grid-template-columns: repeat(3, 1fr);

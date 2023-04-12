@@ -20,6 +20,7 @@ Container.displayName = 'AppContainer';
 export const SideBar = styled.div`
 	position: sticky;
   top: 30px;
+	height: 460px;
 
 	display: flex;
 	flex-direction: column;
@@ -40,6 +41,7 @@ export const Pages = styled.div`
   /* flex: 0 1 50%; */
 	display: none;
 	padding: 30px;
+	height: 100%;
 
 	@media (min-width: 1120px) {
 		display: block;
