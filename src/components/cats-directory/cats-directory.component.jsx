@@ -20,9 +20,13 @@ const CatsDirectory = () => {
   // .catch(error => console.log(error))
 
 	const fetchCats = async () => {
-		const cats = await getData(`https://api.thecatapi.com/v1/images/search?limit=20&has_breeds=1&api_key=live_5kUSd1JtpPS034duZAAySNladWpg9zfRH6nbqcD81xdkmtDXeu3ulbPrFnP58P2A`);
+		const cats = await getData(url);
 		setCats(cats);
 	};
+
+	// const cats = await getData(`https://api.thecatapi.com/v1/images/search?limit=20&has_breeds=1&api_key=live_5kUSd1JtpPS034duZAAySNladWpg9zfRH6nbqcD81xdkmtDXeu3ulbPrFnP58P2A`);
+	// 	setCats(cats);
+	// };
 
 	fetchCats();
 
