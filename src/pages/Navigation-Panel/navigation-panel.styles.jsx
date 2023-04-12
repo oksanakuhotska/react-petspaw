@@ -26,11 +26,12 @@ export const SideBar = styled.div`
 	justify-content: center;
 	align-items: center;
 	flex: 0 1 100%;
-	padding: 30px 0px 30px 30px;
+	padding: 30px;
 
 	@media (min-width: 1120px) {
 		flex: 0 1 50%;
 		justify-content: flex-start;
+		padding: 30px 0px 30px 30px;
 	}
 `;
 SideBar.displayName = 'AppSideBar';
