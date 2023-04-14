@@ -9,6 +9,7 @@ const NavCard = ({category}) => {
 	const { imageUrl, title, route, cardBodyType } = category;
 	const navigate = useNavigate();
 	const onNavigateHandler = () => navigate(route);
+
 	
 	return (
 			<Card>

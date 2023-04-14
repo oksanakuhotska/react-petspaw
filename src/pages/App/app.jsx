@@ -34,7 +34,7 @@ const router = createBrowserRouter([
             element: <Breeds />,
           },
           {
-            path: "sorted",
+            path: "breeds/:breeds",
             element: <BreedsSorted />,
           },
           {

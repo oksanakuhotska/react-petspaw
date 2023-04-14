@@ -4,7 +4,7 @@ import NavCard from '../nav-card/nav-card.component';
 
 import { Container } from './nav-cards.styles';
 
-const NavCards = () => {
+const NavCards = () => {	
 	
 	return (
 		<Container>
