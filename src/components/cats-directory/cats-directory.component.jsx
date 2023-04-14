@@ -37,7 +37,7 @@ const CatsDirectory = () => {
       {cats.map((cats) => {
 
         return (
-					<ImageContainer key={cats.id}>
+					<ImageContainer key={`${cats.breeds[0].name}-${cats.id}`}>
 						<img src={cats.url} alt={cats.breeds[0].name} />
 					</ImageContainer>
         )
