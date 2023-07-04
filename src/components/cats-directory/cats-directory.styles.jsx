@@ -22,6 +22,35 @@ export const DirectoryContainer = styled.div`
 `;
 DirectoryContainer.displayName = "CatsDirectoryContainer";
 
+export const CardImageOverlay = styled.div`
+	position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+	border-radius: var(--border-radius-base);
+`;
+
+CardImageOverlay.displayName = "CardImageOverlay";
+
+export const CardImageWrapper = styled.div`
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 20px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .35s ease;
+	z-index: 10;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+`;
+
+CardImageWrapper.displayName = "CardImageWrapper";
+
+
 export const ImageContainer = styled.div`
 	overflow: hidden;
   position: relative;
@@ -60,5 +89,28 @@ export const ImageContainer = styled.div`
 			grid-row: span 2;
 		}
 	}
+
+	&:hover {
+		${CardImageOverlay} {
+			display: block;
+			transition: var(--transition);
+			background: var(--accent-color);
+			opacity: 0.6;
+		}
+
+		img{
+			transform: scale(1.1);
+			transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+		}
+
+		${CardImageWrapper} {
+			opacity: 1;
+			z-index: 10;
+		}
+	}
 `;
 ImageContainer.displayName = "CatsImageContainer";
+
+
+
+
