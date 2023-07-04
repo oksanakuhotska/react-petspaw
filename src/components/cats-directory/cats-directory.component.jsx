@@ -1,8 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from "react";
 
 import { getData, url } from "../../Utills/fetch-data/fetchData.utills";
+import TextButton, { TEXT_BUTTON_TYPE_CLASSES } from "../buttons/textButton/textButton.component";
 
-import { DirectoryContainer, ImageContainer, } from "./cats-directory.styles";
+import { DirectoryContainer, ImageContainer, CardImageOverlay, CardImageWrapper} from "./cats-directory.styles";
 
 // `https://api.thecatapi.com/v1/images/search?limit=20&has_breeds=1&api_key=live_5kUSd1JtpPS034duZAAySNladWpg9zfRH6nbqcD81xdkmtDXeu3ulbPrFnP58P2A`
 
@@ -32,13 +34,21 @@ const CatsDirectory = () => {
 
   }, [])
 
+  const navigate = useNavigate();
+	const onNavigateHandler = () => navigate("breeds/:breeds");
+
   return (
     <DirectoryContainer>
       {cats.map((cats) => {
 
         return (
 					<ImageContainer key={`${cats.breeds[0].name}-${cats.id}`}>
-						<img src={cats.url} alt={cats.breeds[0].name} />
+            <img src={cats.url} alt={cats.breeds[0].name} />
+            <CardImageOverlay />
+              
+                <CardImageWrapper>
+              <TextButton buttonType={TEXT_BUTTON_TYPE_CLASSES.breedsname} onClick={onNavigateHandler}>{cats.breeds[0].name}</TextButton>
+                </CardImageWrapper>
 					</ImageContainer>
         )
       })}
