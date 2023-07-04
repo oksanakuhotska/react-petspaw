@@ -49,7 +49,19 @@ export const BreedsNameButton = styled(BaseTextButton)`
 	height: 34px;
 	background-color: var(--white-color);
 	font-size: 16px;
+	font-weight: 400;
 	line-height: 150%;
 	text-transform: none;
+	padding: 0px 10px;
+
+	&:hover {
+		transition: var(--transition);
+		background-color: var(--white-color);
+		color: var(--accent-color);
+	}
+
+	&:active {
+		transition: var(--transition);
+	}
 `;
 BreedsNameButton.displayName = 'BreedsNameButton';
