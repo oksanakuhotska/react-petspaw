@@ -1,9 +1,15 @@
+import { useParams } from "react-router-dom";
 
 
 const BreedsSorted = () => {
+
+	const { breeds } = useParams();
+
 	return (
 		<>
-			<h2>BREEDS Sorted</h2>
+		
+			<h1>Hello</h1>
+
 		</>
 	);
 };
