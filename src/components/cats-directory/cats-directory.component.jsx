@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from "react";
 
 import { getData, url } from "../../Utills/fetch-data/fetchData.utills";
@@ -46,8 +46,12 @@ const CatsDirectory = () => {
             <img src={cats.url} alt={cats.breeds[0].name} />
             <CardImageOverlay />
               
-                <CardImageWrapper>
-              <TextButton buttonType={TEXT_BUTTON_TYPE_CLASSES.breedsname} onClick={onNavigateHandler}>{cats.breeds[0].name}</TextButton>
+            <CardImageWrapper>
+              <Link to={`/breeds/${cats.breeds[0].id}`}>
+                <TextButton buttonType={TEXT_BUTTON_TYPE_CLASSES.breedsname}>{cats.breeds[0].name}</TextButton>
+                
+              </Link>
+              
                 </CardImageWrapper>
 					</ImageContainer>
         )
