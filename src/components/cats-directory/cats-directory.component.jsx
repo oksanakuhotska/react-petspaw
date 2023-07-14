@@ -1,10 +1,10 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from "react";
 
 import { getData, url } from "../../Utills/fetch-data/fetchData.utills";
 import TextButton, { TEXT_BUTTON_TYPE_CLASSES } from "../buttons/textButton/textButton.component";
 
-import { DirectoryContainer, ImageContainer, CardImageOverlay, CardImageWrapper} from "./cats-directory.styles";
+import { DirectoryContainer, ImageContainer, CardImageOverlay, CardImageWrapper, CardLink} from "./cats-directory.styles";
 
 // `https://api.thecatapi.com/v1/images/search?limit=20&has_breeds=1&api_key=live_5kUSd1JtpPS034duZAAySNladWpg9zfRH6nbqcD81xdkmtDXeu3ulbPrFnP58P2A`
 
@@ -47,10 +47,10 @@ const CatsDirectory = () => {
             <CardImageOverlay />
               
             <CardImageWrapper>
-              <Link to={`/breeds/${cats.breeds[0].id}`}>
+              <CardLink to={`/breeds/${cats.breeds[0].id}`}>
                 <TextButton buttonType={TEXT_BUTTON_TYPE_CLASSES.breedsname}>{cats.breeds[0].name}</TextButton>
                 
-              </Link>
+              </CardLink>
               
                 </CardImageWrapper>
 					</ImageContainer>

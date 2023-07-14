@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const DirectoryContainer = styled.div`
@@ -111,6 +112,16 @@ export const ImageContainer = styled.div`
 `;
 ImageContainer.displayName = "CatsImageContainer";
 
+export const CardLink = styled(Link)`
+
+
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+`
 
 
 
