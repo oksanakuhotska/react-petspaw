@@ -46,13 +46,14 @@ NavCardButton.displayName = 'NavCardButton';
 //кнопка в грід-картинки BreedsNameButton
 export const BreedsNameButton = styled(BaseTextButton)`
 	width: 85%;
-	height: 34px;
+	min-height: 34px;
 	background-color: var(--white-color);
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 150%;
 	text-transform: none;
 	padding: 0px 10px;
+	text-decoration: none;
 
 	&:hover {
 		transition: var(--transition);
@@ -65,3 +66,13 @@ export const BreedsNameButton = styled(BaseTextButton)`
 	}
 `;
 BreedsNameButton.displayName = 'BreedsNameButton';
+
+export const BreedsId = styled(BaseTextButton)`
+	height: 40px;
+	min-width: 90px;
+	font-size: 20px;
+	line-height: 133.33%;
+	background-color: var(--accent-color);
+	color: var(--white-color);
+`;
+BreedsId.displayName = 'BreedsIdButton';
