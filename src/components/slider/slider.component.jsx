@@ -1,9 +1,10 @@
 import { useState } from "react";
 
-import { Container, SliderImage, LeftArrow, RightArrow } from "./slider.styles";
+import { Container, SliderImage, LeftArrow, RightArrow, DotsNavigation, Dot } from "./slider.styles";
 
 
-const Slider = ({slides}) => {
+
+const Slider = ({ slides }) => {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const goToPrevious = () => {
 		const isFirstSlide = currentIndex === 0;
@@ -16,6 +17,10 @@ const Slider = ({slides}) => {
 		setCurrentIndex(newIndex);
 	}
 
+	const goToSlide = (slideIndex) => {
+		setCurrentIndex(slideIndex);
+	}
+
 	return (
 		<Container>
 			<LeftArrow onClick={goToPrevious}>❰</LeftArrow>
@@ -24,8 +29,14 @@ const Slider = ({slides}) => {
 				style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
 				>
 			</SliderImage>
+			<DotsNavigation>
+				{slides.map((slide, slideIndex) => (
+					<Dot key={slideIndex} onClick={() => goToSlide(slideIndex)}>●</Dot>
+				))}
+			</DotsNavigation>
 		</Container>
 	)
 }
 
 export default Slider;
+
