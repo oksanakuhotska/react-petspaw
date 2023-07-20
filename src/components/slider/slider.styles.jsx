@@ -48,3 +48,28 @@ export const RightArrow = styled.div`
 	}
 `;
 RightArrow.displayName = 'RightArrow';
+
+export const DotsNavigation = styled.div`
+	display: flex;
+	justify-content: center;
+	padding: 7px;
+	background-color: var(--white-color);
+	border-radius: 20px;
+	width: 90px;
+`;
+DotsNavigation.displayName = 'DotsNavigation';
+
+export const Dot = styled.div`
+	margin: 0 3px;
+	cursor: pointer;
+	font-size: 20px;
+	color: var(--secondary-color);
+	
+	&:hover {
+		color: var(--accent-color);
+	}
+	&:active {
+		color: var(--accent-color);
+	}
+`;
+Dot.displayName = 'OneDot';
