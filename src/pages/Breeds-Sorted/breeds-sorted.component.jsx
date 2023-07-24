@@ -12,7 +12,7 @@ const BreedsSorted = () => {
 	const [cat, setCat] = useState([])
 	const { breeds } = useParams();
 
-	const catUrl = `https://api.thecatapi.com/v1/images/search?breed_ids=${breeds}`;
+	const catUrl = `https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${breeds}`;
 
 	const getData = async (catUrl) => {
 	const response = await fetch(
@@ -27,25 +27,31 @@ const BreedsSorted = () => {
 	return await response.json();
 	};
 
-  useEffect(() => {
+	useEffect(() => {
 
-	const fetchCat = async () => {
-		const cat = await getData(catUrl);
-		setCat(cat);
+		const fetchCat = async () => {
+		try {
+			const cat = await getData(catUrl);
+			setCat(cat);
+
+		} catch (error) {
+			console.error('Error fetching cat data:', error);
+		};	
 	};
-		
 	fetchCat();
 
-  }, [])
-
-	console.log(cat, catUrl, breeds);
-		const slides = [
-			{url: `${cat}`, title: `${cat.id}`},
-			{url: `${cat.url}`, title: `${cat.id}`},
-			{url: `${cat.url}`, title: `${cat.id}` },
-			{url: `${cat.url}`, title: `${cat.id}` },
-			{url: `${cat.url}`, title: `${cat.id}`},
-		]
+  }, [catUrl])
+	
+		const slides = cat.length > 0 ? [
+			{url: `${cat[0].url}`, title: `${cat[0].id}`},
+			{url: `${cat[1].url}`, title: `${cat[1].id}`},
+			{url: `${cat[2].url}`, title: `${cat[2].id}` },
+			{url: `${cat[3].url}`, title: `${cat[3].id}` },
+			{url: `${cat[4].url}`, title: `${cat[4].id}`},
+		] : [];
+	
+	
+	console.log(cat, catUrl, breeds, slides);
 	
 	return (
 		<Container>
@@ -57,7 +63,9 @@ const BreedsSorted = () => {
 					<TextButton buttonType={TEXT_BUTTON_TYPE_CLASSES.breedsid}>28</TextButton>
 				</div>
 				<SliderContainer>
-					<Slider slides={slides}/>
+      	{cat.length > 0 && (
+        	<Slider slides={slides}/>
+					)};
 				</SliderContainer>
 			</Body>
     </Container>
