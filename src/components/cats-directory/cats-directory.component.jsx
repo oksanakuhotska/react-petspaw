@@ -34,8 +34,8 @@ const CatsDirectory = () => {
 
   }, [])
 
-  const navigate = useNavigate();
-	const onNavigateHandler = () => navigate("breeds/:breeds");
+  // const navigate = useNavigate();
+	// const onNavigateHandler = () => navigate("breeds/:breeds"); didn't use
 
   return (
     <DirectoryContainer>
