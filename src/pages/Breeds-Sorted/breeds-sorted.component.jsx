@@ -7,9 +7,10 @@ import PagesHeader from "../../components/pages/page's-header/page's-header.comp
 import Slider from "../../components/slider/slider.component";
 
 import { Body, Container, SliderContainer } from "./breeds-sorted.styles";
+import BreedsDetails from "../../components/breed-details/breed-details.component";
 
 const BreedsSorted = () => {
-	const [cat, setCat] = useState([])
+	const [cat, setCat] = useState([]);
 	const { breeds } = useParams();
 
 	const catUrl = `https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${breeds}`;
@@ -50,9 +51,6 @@ const BreedsSorted = () => {
 			{url: `${cat[4].url}`, title: `${cat[4].id}`},
 		] : [];
 	
-	
-	console.log(cat, catUrl, breeds, slides);
-	
 	return (
 		<Container>
 			<PagesHeader />
@@ -63,10 +61,11 @@ const BreedsSorted = () => {
 					<TextButton buttonType={TEXT_BUTTON_TYPE_CLASSES.breedsid}>28</TextButton>
 				</div>
 				<SliderContainer>
-      	{cat.length > 0 && (
-        	<Slider slides={slides}/>
+					{cat.length > 0 && (
+						<Slider slides={slides}/>
 					)};
 				</SliderContainer>
+				<BreedsDetails/>
 			</Body>
     </Container>
 	);
