@@ -6,7 +6,7 @@ import TextButton, { TEXT_BUTTON_TYPE_CLASSES } from "../../components/buttons/t
 import PagesHeader from "../../components/pages/page's-header/page's-header.component";
 import Slider from "../../components/slider/slider.component";
 
-import { Body, Container, SliderContainer } from "./breeds-sorted.styles";
+import { Body, ButtonsContainer, Container, SliderContainer } from "./breeds-sorted.styles";
 import BreedsDetails from "../../components/breed-details/breed-details.component";
 
 const BreedsSorted = () => {
@@ -55,11 +55,11 @@ const BreedsSorted = () => {
 		<Container>
 			<PagesHeader />
 			<Body>
-				<div>
+				<ButtonsContainer>
 					<IconButton buttonType={ICON_BUTTON_TYPE_CLASSES.base}>-</IconButton>
 					<TextButton buttonType={TEXT_BUTTON_TYPE_CLASSES.base}>BREEDS</TextButton>
 					<TextButton buttonType={TEXT_BUTTON_TYPE_CLASSES.breedsid}>28</TextButton>
-				</div>
+				</ButtonsContainer>
 				<SliderContainer>
 					{cat.length > 0 && (
 						<Slider slides={slides}/>
