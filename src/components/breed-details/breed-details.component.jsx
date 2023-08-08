@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 import { getData, url } from "../../Utills/fetch-data/fetchData.utills";
 
-import { Container } from "./breed-details.styles";
+import { Column, Container, Content, Text, SubText, SubTitle, Title } from "./breed-details.styles";
 
 
 const BreedsDetails = () => {
@@ -42,32 +42,32 @@ const BreedsDetails = () => {
 
   return (
 		
-		<Container>
+		<div>
 			{breedDetails && (
-				<div>
-					<h3 className="info__title">{name}</h3>
-					<p className="info__subtitle">{description}</p>
-					<div className="info__content">
-						<div className="info__column">
-							<p className="info__text">Temperament: 
-								<span className="info__temperament info__text-color"> {temperament}</span>
-							</p>
-						</div>
-						<div className="info__column">
-							<p className="info__text">Origin: 
-								<span className="info__origin info__text-color"> {origin}</span>
-							</p>
-							<p className="info__text">Weight: 
-								<span className="info__weight info__text-color"> {metric} kg</span>
-							</p>
-							<p className="info__text">Life span:
-								<span className="info__lifespan info__text-color"> {life_span} year</span>
-							</p>
-						</div>
-					</div>
-				</div>
+				<Container>
+					<Title>{name}</Title>
+					<SubTitle>{description}</SubTitle>
+					<Content>
+						<Column>
+							<Text>Temperament: 
+								<SubText> {temperament}</SubText>
+							</Text>
+						</Column>
+						<Column>
+							<Text>Origin: 
+								<SubText> {origin}</SubText>
+							</Text>
+							<Text>Weight: 
+								<SubText> {metric} kg</SubText>
+							</Text>
+							<Text>Life span:
+								<SubText> {life_span} year</SubText>
+							</Text>
+						</Column>
+					</Content>
+				</Container>
 			)}
-		</Container>
+		</div>
 		
   )
 }
