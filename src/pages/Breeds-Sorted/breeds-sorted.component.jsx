@@ -63,7 +63,7 @@ const BreedsSorted = () => {
 				<SliderContainer>
 					{cat.length > 0 && (
 						<Slider slides={slides}/>
-					)};
+					)}
 				</SliderContainer>
 				<BreedsDetails/>
 			</Body>
