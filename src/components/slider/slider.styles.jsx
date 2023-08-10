@@ -56,6 +56,10 @@ export const DotsNavigation = styled.div`
 	background-color: var(--white-color);
 	border-radius: 20px;
 	width: 90px;
+	position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
 `;
 DotsNavigation.displayName = 'DotsNavigation';
 
