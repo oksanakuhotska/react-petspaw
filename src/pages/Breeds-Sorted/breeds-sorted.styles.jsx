@@ -9,16 +9,18 @@ Container.displayName = 'PagesHeader';
 export const Body = styled.div`
   background: var(--white-color);
 	border-radius: var(--border-radius-base);
-	height: 100vh;
+	height: 100%;
 	width: 100%;
+	padding-bottom: 20px;
 `;
 
 Body.displayName = 'BreedsSortedBody';
 
 export const SliderContainer = styled.div`
 	margin: 0 auto 50px;
-	width: 640px;
-	height: 360px;
+  width: 93%;
+  height: 360px;
+  padding: 0 20px;
 `;
 
 SliderContainer.displayName = 'ImageSliderContainer';
