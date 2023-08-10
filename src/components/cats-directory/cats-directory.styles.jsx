@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+import TextButton from "../buttons/textButton/textButton.component";
+
 export const DirectoryContainer = styled.div`
 	display: grid;
 	grid-template-columns: repeat(1, 1fr);
@@ -34,7 +36,7 @@ export const CardImageOverlay = styled.div`
 
 CardImageOverlay.displayName = "CardImageOverlay";
 
-export const CardImageWrapper = styled.div`
+export const CardButtonWrapper = styled.div`
   position: absolute;
   width: 100%;
   left: 0;
@@ -43,13 +45,20 @@ export const CardImageWrapper = styled.div`
   opacity: 0;
   transition: opacity .35s ease;
 	z-index: 10;
+	text-align: center;
 
 	display: flex;
 	align-items: center;
 	justify-content: center;
 `;
 
-CardImageWrapper.displayName = "CardImageWrapper";
+CardButtonWrapper.displayName = "CardButtonWrapper";
+
+export const CenteredButton = styled(TextButton)`
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+`;
 
 
 export const ImageContainer = styled.div`
@@ -104,7 +113,7 @@ export const ImageContainer = styled.div`
 			transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 		}
 
-		${CardImageWrapper} {
+		${CardButtonWrapper} {
 			opacity: 1;
 			z-index: 10;
 		}
@@ -113,7 +122,8 @@ export const ImageContainer = styled.div`
 ImageContainer.displayName = "CatsImageContainer";
 
 export const CardLink = styled(Link)`
-
+	width: 100%;
+	display: inline-block;
 
 	text-decoration: none;
 
