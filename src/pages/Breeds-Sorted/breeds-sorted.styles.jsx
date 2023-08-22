@@ -19,8 +19,16 @@ Body.displayName = 'BreedsSortedBody';
 export const SliderContainer = styled.div`
 	margin: 0 auto 50px;
   width: 93%;
-  height: 360px;
+  height: 40vh;
   padding: 0 20px;
+
+	/* @media (min-width: 768px) {
+		height: 40vh;
+	}
+
+	@media (min-width: 1120px) {
+		height: 50vh;
+	} */
 `;
 
 SliderContainer.displayName = 'ImageSliderContainer';
