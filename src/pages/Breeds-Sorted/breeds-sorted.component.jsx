@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, NavLink, useNavigate, Link } from "react-router-dom";
 
 import IconButton, { ICON_BUTTON_TYPE_CLASSES } from "../../components/buttons/iconButton/iconButton.component";
 import TextButton, { TEXT_BUTTON_TYPE_CLASSES } from "../../components/buttons/textButton/textButton.component";
 import PagesHeader from "../../components/pages/page's-header/page's-header.component";
 import Slider from "../../components/slider/slider.component";
-
-import { Body, ButtonsContainer, Container, SliderContainer } from "./breeds-sorted.styles";
 import BreedsDetails from "../../components/breed-details/breed-details.component";
+import SpriteIcon from "../../components/icon/icon.component";
+
+import { Body, ButtonsContainer, Container, SliderContainer, BackLink } from "./breeds-sorted.styles";
 
 const BreedsSorted = () => {
 	const [cat, setCat] = useState([]);
 	const { breeds } = useParams();
+	const navigate = useNavigate();
 
 	const catUrl = `https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${breeds}`;
 
@@ -56,9 +58,16 @@ const BreedsSorted = () => {
 			<PagesHeader />
 			<Body>
 				<ButtonsContainer>
-					<IconButton buttonType={ICON_BUTTON_TYPE_CLASSES.base}>-</IconButton>
-					<TextButton buttonType={TEXT_BUTTON_TYPE_CLASSES.base}>BREEDS</TextButton>
-					<TextButton buttonType={TEXT_BUTTON_TYPE_CLASSES.breedsid}>28</TextButton>
+					<IconButton 
+						buttonType={ICON_BUTTON_TYPE_CLASSES.base}
+						onClick={() => navigate(-1)}
+					>
+						<SpriteIcon icon="arrow-left"/>
+					</IconButton>
+					<TextButton buttonType={TEXT_BUTTON_TYPE_CLASSES.base}>
+						<BackLink to="/breeds">BREEDS</BackLink>
+					</TextButton>
+					<TextButton buttonType={TEXT_BUTTON_TYPE_CLASSES.breedsid}>{breeds}</TextButton>
 				</ButtonsContainer>
 				<SliderContainer>
 					{cat.length > 0 && (
