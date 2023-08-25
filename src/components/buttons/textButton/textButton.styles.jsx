@@ -74,5 +74,6 @@ export const BreedsId = styled(BaseTextButton)`
 	line-height: 133.33%;
 	background-color: var(--accent-color);
 	color: var(--white-color);
+	padding: 0px 20px;
 `;
 BreedsId.displayName = 'BreedsIdButton';
