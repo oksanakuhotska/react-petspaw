@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -5,6 +6,22 @@ export const Container = styled.div`
 `;
 
 Container.displayName = 'PagesHeader';
+
+export const BackLink = styled(NavLink)`
+	text-decoration: none;
+	color: inherit;
+	font-family: inherit;
+
+	svg {
+		fill: var(--accent-color);
+	}
+
+	svg:hover {
+		fill: var(--white-color);
+	}
+`;
+
+Container.displayName = 'LinkBackToPreviousPage';
 
 export const Body = styled.div`
   background: var(--white-color);
