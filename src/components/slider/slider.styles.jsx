@@ -18,16 +18,26 @@ SliderImage.displayName = 'SliderImage';
 export const LeftArrow = styled.div`
 	position: absolute;
 	top: 50%;
-	left: 32px;
+	left: 25px;
 	transform: translate(0, -50%);
-	font-size: 50px;
 	color: var(--accent-color);
 	z-index: 1;
 	cursor: pointer;
 	fill: var(--accent-color);
 
+	svg {
+		width: 50px;
+		height: 50px;
+
+		@media (min-width: 678px){
+		  width: 70px;
+		  height: 70px;
+	  }
+	}
+
 	&:hover {
-		transform: scale(1.2);
+		transform: translate(0, -50%) scale(1.2);
+		transition: var(--transition-lazy);
 	}
 `;
 LeftArrow.displayName = 'LeftArrow';
@@ -35,16 +45,26 @@ LeftArrow.displayName = 'LeftArrow';
 export const RightArrow = styled.div`
 	position: absolute;
 	top: 50%;
-	right: 32px;
-	transform: translate(0, -50%);
-	font-size: 50px;
+	right: 25px;
+	transform: translate(0, -50%) rotate(180deg);
 	color: var(--accent-color);
 	z-index: 1;
 	cursor: pointer;
 	fill: var(--accent-color);
 
+	svg {
+		width: 50px;
+		height: 50px;
+
+		@media (min-width: 678px){
+		  width: 70px;
+		  height: 70px;
+	  }
+	}
+
 	&:hover {
-		transform: scale(1.2);
+		transform: translate(0, -50%) scale(1.2) rotate(180deg);
+		transition: var(--transition-lazy);
 	}
 `;
 RightArrow.displayName = 'RightArrow';
