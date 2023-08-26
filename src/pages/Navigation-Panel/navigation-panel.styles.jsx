@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Container = styled.div`
 	display: grid;
@@ -22,14 +22,15 @@ export const SideBar = styled.div`
   top: 30px;
 	height: auto;
 
-	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	flex: 0 1 100%;
 	padding: 30px;
+	display: ${(props) => (props.showPages ? "none" : "flex")};
 
 	@media (min-width: 1120px) {
+		display: flex;
 		flex: 0 1 50%;
 		justify-content: flex-start;
 		padding: 30px 0px 30px 30px;
@@ -39,13 +40,19 @@ SideBar.displayName = 'AppSideBar';
 
 export const Pages = styled.div`
   /* flex: 0 1 50%; */
-	display: none;
+	/* display: none; */
 	padding: 30px;
 	height: 100%;
 
+	@media (max-width: 1120px) {
+    display: ${(props) => (props.showPages ? "block" : "none")};
+    flex: 0 1 100%;
+    overflow: hidden;
+  }
+
 	@media (min-width: 1120px) {
-		display: block;
-		padding: 30px 30px 30px 0px;
+		/* display: block; */
+		/* padding: 30px 30px 30px 0px; */
 	}
 `;
 Pages.displayName = 'AppPages';
