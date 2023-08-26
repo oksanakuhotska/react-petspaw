@@ -8,7 +8,6 @@ import { Container, SideBar, Pages } from './navigation-panel.styles';
 import PagesHeader from '../../components/pages/page\'s-header/page\'s-header.component';
 
 const NavigationPanel = () => {
-	const isNonMobile = window.innerWidth >= 1100;
 
 	return(
 		<Container>
