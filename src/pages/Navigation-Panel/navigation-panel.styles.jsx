@@ -20,7 +20,7 @@ Container.displayName = 'AppContainer';
 export const SideBar = styled.div`
 	position: sticky;
   top: 30px;
-	height: 460px;
+	height: auto;
 
 	display: flex;
 	flex-direction: column;
