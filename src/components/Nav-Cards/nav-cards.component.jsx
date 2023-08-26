@@ -4,12 +4,12 @@ import NavCard from '../nav-card/nav-card.component';
 
 import { Container } from './nav-cards.styles';
 
-const NavCards = () => {	
+const NavCards = ({ onNavButtonClick }) => {	
 	
 	return (
 		<Container>
 			{categories.map((category) => (
-				<NavCard key={category.id} category={category} />
+				<NavCard key={category.id} category={category} onNavButtonClick={onNavButtonClick} />
 			))}
 		</Container>
 	)
