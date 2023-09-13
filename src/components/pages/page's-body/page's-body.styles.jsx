@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -35,3 +37,24 @@ export const Body = styled.div`
 	}
 `;
 Body.displayName = 'GridBody';
+
+export const Header = styled.div`
+	display: flex;
+	gap: 10px;
+	padding: 20px 20px 0px 20px;
+`;
+Header.displayName = 'Header buttons';
+
+export const BackLink = styled(NavLink)`
+	text-decoration: none;
+	color: inherit;
+	font-family: inherit;
+
+	svg {
+		fill: var(--accent-color);
+	}
+
+	svg:hover {
+		fill: var(--white-color);
+	}
+`;
