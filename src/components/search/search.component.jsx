@@ -1,10 +1,12 @@
 
+import { useState } from 'react';
 import IconButton, { ICON_BUTTON_TYPE_CLASSES } from '../buttons/iconButton/iconButton.component';
 import SpriteIcon from "../icon/icon.component";
 
 import { SearchContainer, SearchForm, SearchInput } from "./search.styles";
 
 const Search = () => {
+	const [input, setInput] = useState('');
 
   return (
     <SearchContainer> 
@@ -17,6 +19,8 @@ const Search = () => {
           placeholder="Search for breeds by name"
           name="user-search-request"
           aria-label="Search cats"
+					value={input}
+					onChange={(e) => setInput(e.target.value)}
         />
         <IconButton buttonType={ICON_BUTTON_TYPE_CLASSES.base} type="submit">
           <SpriteIcon icon="search" />
