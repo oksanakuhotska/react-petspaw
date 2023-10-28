@@ -24,7 +24,7 @@ export const BurgerButton = styled(Link)`
 `;
 BurgerButton.displayName = "BurgerButton";
 
-export const ButtonLine = styled.div`
+export const ButtonLine = styled.span`
 	display: block;
   background-color: var(--accent-color);
   width: 30px;
@@ -39,15 +39,15 @@ export const ButtonLine = styled.div`
   transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
 
 	&:nth-child(1) {
-		top: 19px;
+		top: 20px;
 	}
 
 	&:nth-child(2) {
-		top: 24px;
+		top: 30px;
 	}
 
 	&:nth-child(3) {
-		top: 34px;
+		top: 40px;
 	}
 `;
 ButtonLine.displayName = "ButtonLine";

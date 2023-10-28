@@ -1,7 +1,13 @@
 import styled from "styled-components";
 
-// export const HomeContainer = styled``;
-// HomeContainer.displayName = 'HomeContainer';
+export const Container = styled.div`
+	display: none;
+
+	@media (min-width: 1120px) {
+		display: flex;
+	}
+`;
+Container.displayName = 'HomeContainer';
 
 export const Overlay = styled.div`
 	background-color: var(--secondary-color);

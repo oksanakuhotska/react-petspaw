@@ -1,10 +1,10 @@
 
-
+import PagesLayout from "../../components/pages/layout/layout.component";
 
 const Breeds = () => {
 	return (
 		<>
-			<h2>BREEDS</h2>
+			<PagesLayout />
 		</>
 	);
 };

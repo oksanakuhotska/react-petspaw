@@ -33,6 +33,11 @@ export const SearchForm = styled(Form)`
 		outline: solid var(--accent-color);
 		color: var(--dark-color);
 	}
+
+	&:focus {
+		outline: solid var(--accent-color);
+		color: var(--dark-color);
+	}
 `;
 
 SearchForm.displayName = 'SearchForm';
@@ -46,6 +51,10 @@ export const SearchInput = styled.input`
 	font-size: 20px;
 	line-height: 150%;
 	color: var(--medium-grey-color);
+
+	&:focus {
+		outline: none;
+	}
 `;
 
 SearchInput.displayName = 'SearchInput';

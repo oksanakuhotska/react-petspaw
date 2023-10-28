@@ -5,10 +5,14 @@ import CardBody from '../nav-card-body/nav-card-body.component';
 
 import { Card, CardImage } from './nav-card.styles';
 
-const NavCard = ({category}) => {
+const NavCard = ({ category, onNavButtonClick }) => {
 	const { imageUrl, title, route, cardBodyType } = category;
 	const navigate = useNavigate();
-	const onNavigateHandler = () => navigate(route);
+	const onNavigateHandler = () => {
+    onNavButtonClick(); // Викликаємо функцію з NavCards
+    navigate(route);
+  };
+
 	
 	return (
 			<Card>

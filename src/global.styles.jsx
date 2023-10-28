@@ -25,10 +25,14 @@ export const GlobalStyle = createGlobalStyle`
 		box-sizing: border-box;
 		scroll-behavior: smooth;
 		margin: 0;
+		width: 100%;
+		height: auto;
 	}
 
 	body {
 		min-width: 320px;
+		max-width: 100%;
+		height: 100%;
 		overflow: auto;
 		
 		font-size: 16px;
