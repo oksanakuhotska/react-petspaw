@@ -23,13 +23,14 @@ const PagesLayout = () => {
 		fetchCats();
   }, []);
 
-  useEffect(() => {
-    const newFilteredCats = cats.filter((cat) => {
-      return cat.name.toLocaleLowerCase().includes(searchField);
-    });
 
-    setFilterCats(newFilteredCats);
-  }, [cats, searchField]);
+	useEffect(() => {
+		const newFilteredCats = cats.filter((cat) => {
+			return cat.name && cat.name.trim().toLocaleLowerCase().includes(searchField);
+		});
+	
+		setFilterCats(newFilteredCats);
+	}, [cats, searchField]);
 
   const onSearchChange = (event) => {
     const searchFieldString = event.target.value.toLocaleLowerCase();

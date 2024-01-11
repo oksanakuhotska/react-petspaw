@@ -18,32 +18,32 @@ const BreedsSorted = () => {
 	const catUrl = `https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${breeds}`;
 
 	const getData = async (catUrl) => {
-	const response = await fetch(
-		catUrl, 
-		{ method: "GET"}
-	);
+    try {
+      const response = await fetch(catUrl, { method: "GET" });
 
-	if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-	
-	return await response.json();
-	};
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error("Error fetching cat data:", error);
+      return [];
+    }
+  };
 
 	useEffect(() => {
+    const fetchCat = async () => {
+      try {
+        const catData = await getData(catUrl);
+        setCat(catData);
+      } catch (error) {
+        console.error("Error fetching cat data:", error);
+      }
+    };
 
-		const fetchCat = async () => {
-		try {
-			const cat = await getData(catUrl);
-			setCat(cat);
-
-		} catch (error) {
-			console.error('Error fetching cat data:', error);
-		};	
-	};
-	fetchCat();
-
-  }, [catUrl])
+    fetchCat();
+  }, [catUrl]);
 	
 		const slides = cat.length > 0 ? [
 			{url: `${cat[0].url}`, title: `${cat[0].id}`},
