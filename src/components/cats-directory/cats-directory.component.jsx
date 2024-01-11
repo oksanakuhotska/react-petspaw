@@ -1,23 +1,23 @@
-// import { useNavigate } from 'react-router-dom';
-// import { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from "react";
 
-// import { getData, url } from "../../Utills/fetch-data/fetchData.utills";
+import { getData, url } from "../../Utills/fetch-data/fetchData.utills";
 import { TEXT_BUTTON_TYPE_CLASSES } from "../buttons/textButton/textButton.component";
 
 import { DirectoryContainer, ImageContainer, CardImageOverlay, CardButtonWrapper, CardLink, CenteredButton} from "./cats-directory.styles";
 
-const CatsDirectory = ({ cats }) => {
-  // const [cats, setCats] = useState([])
+const CatsDirectory = () => {
+  const [cats, setCats] = useState([])
 
-  // useEffect(() => {
-  	//const fetchCats = async () => {
-	// 	const cats = await getData(url);
-	// 	setCats(cats);
-	// };
+  useEffect(() => {
+  const fetchCats = async () => {
+		const cats = await getData(url);
+		setCats(cats);
+	};
 
-	// fetchCats();
+	fetchCats();
 
-  // }, [])
+  }, [])
 
   return (
     <DirectoryContainer>

@@ -21,7 +21,7 @@ const Search = ({ onChangeHandler }) => {
           aria-label="Search cats"
 					// value={input}
 					// onChange={(e) => setInput(e.target.value)}
-					onChange={onChangeHandler}
+					// onChange={onChangeHandler}
         />
         <IconButton buttonType={ICON_BUTTON_TYPE_CLASSES.base} type="submit">
           <SpriteIcon icon="search" />

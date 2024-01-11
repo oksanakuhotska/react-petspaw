@@ -3,12 +3,12 @@ import ReactionsHistory from "../../reactions-history/reactions-history.componen
 import Search from "../../search/search.component";
 import { Container } from "./page's-header.styles";
 
-const PagesHeader = ({ onChangeHandler }) => {
+const PagesHeader = () => {
 
   return (
     <Container>
       <Burger />
-      <Search {...onChangeHandler} />
+      <Search />
       <ReactionsHistory />
     </Container>
   )

@@ -7,7 +7,7 @@ import IconButton, { ICON_BUTTON_TYPE_CLASSES } from "../../buttons/iconButton/i
 import SpriteIcon from "../../icon/icon.component";
 import TextButton, { TEXT_BUTTON_TYPE_CLASSES } from "../../buttons/textButton/textButton.component";
 
-const PagesBody = ({ cats }) => {
+const PagesBody = () => {
 	const navigate = useNavigate();
 
   return (
@@ -24,7 +24,7 @@ const PagesBody = ({ cats }) => {
 				</TextButton>
 			</Header>
 			<Body>
-				<CatsDirectory {...cats} />
+				<CatsDirectory />
 			</Body>
     </Container>
   )
