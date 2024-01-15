@@ -12,7 +12,7 @@ const PagesLayout = () => {
 
 	const [searchField, setSearchField] = useState("");
   const [cats, setCats] = useState([]);
-  const [filteredCats, setFilterCats] = useState(cats);
+  const [filteredCats, setFilteredCats] = useState(cats);
 
   useEffect(() => {
     const fetchCats = async () => {
@@ -35,7 +35,7 @@ const PagesLayout = () => {
   (cat) => cat.breeds[0]?.name.toLowerCase().includes(searchField?.toLowerCase())
 );
 	
-		setFilterCats(newFilteredCats);
+		setFilteredCats(newFilteredCats);
 	}, [cats, searchField]);
 
   const onSearchChange = (newSearchTerm) => {
