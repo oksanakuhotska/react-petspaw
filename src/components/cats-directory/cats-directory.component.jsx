@@ -32,7 +32,10 @@ const CatsDirectory = ({ cats }) => {
       {displayedCats.map((cat) => {
         if (cat.breeds && cat.breeds[0]) {
           return (
-            <ImageContainer key={`${cat.breeds[0].name}-${cat.id}`}>
+            <ImageContainer
+              key={`${cat.breeds[0].name}-${cat.id}`}
+              filtered={cat.filtered} // передача пропсу filtered
+            >
               <img src={cat.url} alt={cat.breeds[0].name} />
               <CardImageOverlay />
               <CardButtonWrapper>
