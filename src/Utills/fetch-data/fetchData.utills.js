@@ -1,6 +1,6 @@
-export const url = `https://api.thecatapi.com/v1/images/search?limit=20&has_breeds=1&api_key=${process.env.REACT_APP_API_KEY}`;
+// export const url = `https://api.thecatapi.com/v1/images/search?limit=20&has_breeds=1&api_key=${process.env.REACT_APP_API_KEY}`;
 
-// export const url = `https://api.thecatapi.com/v1/images/search?limit=20&has_breeds=1&api_key=live_5kUSd1JtpPS034duZAAySNladWpg9zfRH6nbqcD81xdkmtDXeu3ulbPrFnP58P2A`;
+export const url = `https://api.thecatapi.com/v1/images/search?limit=20&has_breeds=1&api_key=live_5kUSd1JtpPS034duZAAySNladWpg9zfRH6nbqcD81xdkmtDXeu3ulbPrFnP58P2A`;
 
 // fetch(url, {
 //   headers: {
@@ -17,16 +17,12 @@ export const url = `https://api.thecatapi.com/v1/images/search?limit=20&has_bree
 //     console.log(error);
 //   });
 
-
 export const getData = async (url) => {
-	const response = await fetch(
-		url, 
-		{ method: "GET"}
-	);
+  const response = await fetch(url, { method: "GET" });
 
-	if (!response.ok) {
+  if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
-	
-	return await response.json();
+
+  return await response.json();
 };

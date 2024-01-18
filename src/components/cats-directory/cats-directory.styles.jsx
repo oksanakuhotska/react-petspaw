@@ -7,8 +7,8 @@ import TextButton from "../buttons/textButton/textButton.component";
 export const DirectoryContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-auto-rows: minmax(400px, 400px);
-	grid-auto-rows: 100%;
+  grid-auto-rows: minmax(300px, 400px);
+	/* grid-auto-rows: 100%; */
   gap: 20px;
   grid-auto-flow: dense;
   padding: 20px;
@@ -18,7 +18,7 @@ export const DirectoryContainer = styled.div`
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: minmax(200px, auto);
-		grid-auto-rows: 100%;
+		/* grid-auto-rows: 100%; */
     gap: 20px;
     grid-auto-flow: dense;
   }
