@@ -1,12 +1,21 @@
 // PagesBody component
 import { useNavigate } from "react-router-dom";
 import CatsDirectory from "../../cats-directory/cats-directory.component";
-import { Container, Body, Header, BackLink } from "./page's-body.styles";
 import IconButton, { ICON_BUTTON_TYPE_CLASSES } from "../../buttons/iconButton/iconButton.component";
 import SpriteIcon from "../../icon/icon.component";
 import TextButton, { TEXT_BUTTON_TYPE_CLASSES } from "../../buttons/textButton/textButton.component";
+import SortTableBreeds from "../../sort-table-breeds/sort-table-breeds.component";
 
-const PagesBody = ({ cats }) => {
+import {
+	Container, 
+	Body, 
+	Header, 
+	BackLink
+} from "./page's-body.styles";
+
+// const PagesBody = ({ breeds, selectedBreed, setSelectedBreed, sortOrder, setSortOrder, count, setCount, handleSortAZ, handleSortZA }) => {
+
+const PagesBody = () => {
   const navigate = useNavigate();
 
   return (
@@ -21,9 +30,20 @@ const PagesBody = ({ cats }) => {
         <TextButton buttonType={TEXT_BUTTON_TYPE_CLASSES.base}>
           <BackLink to="/breeds">BREEDS</BackLink>
         </TextButton>
+				{/* <SortTableBreeds
+          breeds={breeds}
+          selectedBreed={selectedBreed}
+          setSelectedBreed={setSelectedBreed}
+          sortOrder={sortOrder}
+          setSortOrder={setSortOrder}
+          count={count}
+          setCount={setCount}
+          handleSortAZ={handleSortAZ}
+          handleSortZA={handleSortZA}
+        /> */}
       </Header>
       <Body>
-        <CatsDirectory cats={cats} />
+        <CatsDirectory />
       </Body>
     </Container>
   );
