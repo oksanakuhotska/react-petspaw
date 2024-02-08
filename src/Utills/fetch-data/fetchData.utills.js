@@ -1,11 +1,32 @@
-// export const url = `https://api.thecatapi.com/v1/images/search?limit=20&has_breeds=1&api_key=${process.env.REACT_APP_API_KEY}`;
-
-export const url = `https://api.thecatapi.com/v1/images/search?limit=100&has_breeds=1&api_key=live_5kUSd1JtpPS034duZAAySNladWpg9zfRH6nbqcD81xdkmtDXeu3ulbPrFnP58P2A`;
+export const url = `https://api.thecatapi.com/v1/images/search?limit=100&has_breeds=1`;
 
 export const urlBreeds = `https://api.thecatapi.com/v1/breeds`;
 
-// const catUrl = `https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${breeds}`;
+export const catOptionsGet = {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json",
+    "x-api-key": process.env.REACT_APP_API_KEY,
+  },
+};
 
+export const catOptionsPost = {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "x-api-key": process.env.REACT_APP_API_KEY,
+  },
+};
+
+export const catOptionsDelete = {
+  method: "DELETE",
+  headers: {
+    "Content-Type": "application/json",
+    "x-api-key": process.env.REACT_APP_API_KEY,
+  },
+};
+
+// const catUrl = `https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${breeds}`;
 
 // fetch(url, {
 //   headers: {
@@ -23,7 +44,7 @@ export const urlBreeds = `https://api.thecatapi.com/v1/breeds`;
 //   });
 
 export const getData = async (url) => {
-  const response = await fetch(url, { method: "GET" });
+  const response = await fetch(url, catOptionsGet);
 
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
