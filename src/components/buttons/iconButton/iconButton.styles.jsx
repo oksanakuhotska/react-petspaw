@@ -32,6 +32,11 @@ export const BaseIconButton = styled.button`
 	&:active {
 		transition: var(--transition);
 	}
+
+	&:visited {
+		background-color: var(--secondary-color);
+		fill: var(--accent-color);
+	}
 `;
 BaseIconButton.displayName = 'BaseIconButton';
 
