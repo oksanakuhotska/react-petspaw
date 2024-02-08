@@ -14,7 +14,7 @@ const ReactionsHistory = () => {
         <LinkToHistory to="/likes"><SpriteIcon icon="smile-like"/></LinkToHistory>
       </IconButton>
       <IconButton buttonType={ICON_BUTTON_TYPE_CLASSES.reactionhistory}>
-        <LinkToHistory to="/dislikes"><SpriteIcon icon="smile-sad"/></LinkToHistory>
+        <LinkToHistory to="/dislikes"><SpriteIcon icon="smile-dislike"/></LinkToHistory>
       </IconButton>
       
     </Container>
