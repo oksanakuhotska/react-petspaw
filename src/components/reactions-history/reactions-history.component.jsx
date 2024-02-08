@@ -1,6 +1,6 @@
 import IconButton, { ICON_BUTTON_TYPE_CLASSES } from "../buttons/iconButton/iconButton.component";
 import SpriteIcon from "../icon/icon.component";
-import { Container } from "./reactions-history.styles";
+import { Container, LinkToHistory } from "./reactions-history.styles";
 
 const ReactionsHistory = () => {
 
@@ -8,13 +8,13 @@ const ReactionsHistory = () => {
   return (
     <Container>
       <IconButton buttonType={ICON_BUTTON_TYPE_CLASSES.reactionhistory}>
-        <SpriteIcon icon="smile-happy"/>
+        <LinkToHistory to="/favourites"><SpriteIcon icon="smile-happy"/></LinkToHistory>
       </IconButton>
       <IconButton buttonType={ICON_BUTTON_TYPE_CLASSES.reactionhistory}>
-        <SpriteIcon icon="smile-like"/>
+        <LinkToHistory to="/likes"><SpriteIcon icon="smile-like"/></LinkToHistory>
       </IconButton>
       <IconButton buttonType={ICON_BUTTON_TYPE_CLASSES.reactionhistory}>
-        <SpriteIcon icon="smile-sad"/>
+        <LinkToHistory to="/dislikes"><SpriteIcon icon="smile-sad"/></LinkToHistory>
       </IconButton>
       
     </Container>
