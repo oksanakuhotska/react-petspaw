@@ -30,17 +30,6 @@ const PagesBody = () => {
         <TextButton buttonType={TEXT_BUTTON_TYPE_CLASSES.base}>
           <BackLink to="/breeds">BREEDS</BackLink>
         </TextButton>
-				{/* <SortTableBreeds
-          breeds={breeds}
-          selectedBreed={selectedBreed}
-          setSelectedBreed={setSelectedBreed}
-          sortOrder={sortOrder}
-          setSortOrder={setSortOrder}
-          count={count}
-          setCount={setCount}
-          handleSortAZ={handleSortAZ}
-          handleSortZA={handleSortZA}
-        /> */}
       </Header>
       <Body>
         <CatsDirectory />
