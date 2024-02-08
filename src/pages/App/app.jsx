@@ -10,6 +10,9 @@ import Gallery from "../Gallery/gallery.component";
 import BreedsSorted from "../Breeds-Sorted/breeds-sorted.component";
 
 import { GlobalStyle } from "../../global.styles";
+import Dislikes from "../Dislikes/dislikes.component";
+import Favourites from "../Favourites/favourites.component";
+import Likes from "../Likes/likes.component";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +44,23 @@ const router = createBrowserRouter([
             path: "gallery",
             element: <Gallery />,
           },
+          {
+            path: "likes",
+            element: <Likes />,
+          },
+          {
+            path: "dislikes",
+            element: <Dislikes />,
+          },
+          {
+            path: "favourites",
+            element: <Favourites />,
+          },
+          {
+            path: "searchByBreeds",
+            element: <searchByBreeds />,
+
+          }
         ],
       },
     ],
