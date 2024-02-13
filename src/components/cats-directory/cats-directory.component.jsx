@@ -66,16 +66,16 @@ const CatsDirectory = () => {
 			{filteredBreeds && filteredBreeds.length > 0 ? (
 				<>
 					<SortTableBreeds
-          breeds={breeds}
-          selectedBreed={selectedBreed}
-          setSelectedBreed={setSelectedBreed}
-          sortOrder={sortOrder}
-          setSortOrder={setSortOrder}
-          count={count}
-          setCount={setCount}
-          handleSortAZ={handleSortAZ}
-          handleSortZA={handleSortZA}
-        ></SortTableBreeds>
+						breeds={breeds}
+						selectedBreed={selectedBreed}
+						setSelectedBreed={setSelectedBreed}
+						sortOrder={sortOrder}
+						setSortOrder={setSortOrder}
+						count={count}
+						setCount={setCount}
+						handleSortAZ={handleSortAZ}
+						handleSortZA={handleSortZA}
+					></SortTableBreeds>
 					<DirectoryContainer>
 						{filteredBreeds.map((breed) => (
 							<ImageContainer
