@@ -1,13 +1,12 @@
 // PagesBody component
-import CatsDirectory from "../cats-directory/cats-directory.component";
+
+import TabHeader from "../tab-header/tab-header.component";
+import BreedsCatsDirectory from "../breeds-cats-directory/breeds-cats-directory.component";
 
 import {
 	Container, 
 	Body, 
 } from "./page's-body.styles";
-import TabHeader from "../tab-header/tab-header.component";
-
-// const PagesBody = ({ breeds, selectedBreed, setSelectedBreed, sortOrder, setSortOrder, count, setCount, handleSortAZ, handleSortZA }) => {
 
 const PagesBody = () => {
 
@@ -15,7 +14,7 @@ const PagesBody = () => {
     <Container>
       <TabHeader tabs="Breeds" />
       <Body>
-        <CatsDirectory />
+        <BreedsCatsDirectory />
       </Body>
     </Container>
   );

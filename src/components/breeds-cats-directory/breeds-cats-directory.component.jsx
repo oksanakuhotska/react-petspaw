@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { getData, urlBreeds } from "../../Utills/fetch-data/fetchData.utills";
 import SortTableBreeds from "../sort-table-breeds/sort-table-breeds.component";
-import { DirectoryContainer } from "./cats-directory.styles";
+import { DirectoryContainer } from "./breeds-cats-directory.styles";
 import CatsGridCard from "../cats-grid-card/cats-grid-card.component";
 
-const CatsDirectory = () => {
+const BreedsCatsDirectory = () => {
   const [breeds, setBreeds] = useState([]);
   const [filteredBreeds, setFilteredBreeds] = useState([]);
   const [sortOrder, setSortOrder] = useState("Default");
@@ -88,4 +88,4 @@ const CatsDirectory = () => {
   );
 };
 
-export default CatsDirectory;
+export default BreedsCatsDirectory;

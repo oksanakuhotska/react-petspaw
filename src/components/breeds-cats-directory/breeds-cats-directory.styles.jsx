@@ -23,7 +23,7 @@ export const DirectoryContainer = styled.div`
     grid-auto-flow: dense;
   }
 `;
-DirectoryContainer.displayName = "CatsDirectoryContainer";
+DirectoryContainer.displayName = "BreedsCatsDirectoryContainer";
 
 export const CardImageOverlay = styled.div`
   position: absolute;
