@@ -24,7 +24,7 @@ export const Title = styled.h3`
   background: var(--white-color);
 
 	display: inline;
-	max-width: 200px;
+	width: auto;
   position: absolute;
 	top: -25px;
   left: 0;
@@ -33,7 +33,7 @@ export const Title = styled.h3`
 
 	@media (min-width: 678px){
 		max-width: 300px;
-		font-size: 36px;
+		width: auto;
 	}
 `;
 Title.displayName = "BreedsDetailsTitle";

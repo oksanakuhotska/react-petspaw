@@ -11,7 +11,7 @@ const BreedsSorted = () => {
   const [cat, setCat] = useState([]);
   const { breeds } = useParams();
 
-  const catUrl = `https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${breeds}`;
+	const catUrl = `https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${breeds}`;
 
   const getData = async (catUrl) => {
     try {

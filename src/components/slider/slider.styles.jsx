@@ -75,7 +75,7 @@ export const DotsNavigation = styled.div`
 	padding: 7px;
 	background-color: var(--white-color);
 	border-radius: 20px;
-	width: 90px;
+	width: auto;
 	position: absolute;
   bottom: -15px;
   left: 50%;
