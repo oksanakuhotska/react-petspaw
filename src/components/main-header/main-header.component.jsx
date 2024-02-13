@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import Burger from "../../burger/burger.component";
-import ReactionsHistory from "../../reactions-history/reactions-history.component";
-import Search from "../../search/search.component";
-import { Container } from "./page's-header.styles";
-import { getData, url } from "../../../Utills/fetch-data/fetchData.utills";
+import Burger from "../burger/burger.component";
+import ReactionsHistory from "../reactions-history/reactions-history.component";
+import Search from "../search/search.component";
+import { Container } from "./main-header.styles";
+import { getData, url } from "../../Utills/fetch-data/fetchData.utills";
 
 
-const PagesHeader = () => {
+const MainHeader = () => {
 
   const [searchField, setSearchField] = useState("");
   const [cats, setCats] = useState([]);
@@ -51,4 +51,4 @@ const PagesHeader = () => {
   )
 }
 
-export default PagesHeader;
+export default MainHeader;

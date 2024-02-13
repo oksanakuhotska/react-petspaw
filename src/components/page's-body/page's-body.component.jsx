@@ -1,10 +1,10 @@
 // PagesBody component
 import { useNavigate } from "react-router-dom";
-import CatsDirectory from "../../cats-directory/cats-directory.component";
-import IconButton, { ICON_BUTTON_TYPE_CLASSES } from "../../buttons/iconButton/iconButton.component";
-import SpriteIcon from "../../icon/icon.component";
-import TextButton, { TEXT_BUTTON_TYPE_CLASSES } from "../../buttons/textButton/textButton.component";
-import SortTableBreeds from "../../sort-table-breeds/sort-table-breeds.component";
+import CatsDirectory from "../cats-directory/cats-directory.component";
+import IconButton, { ICON_BUTTON_TYPE_CLASSES } from "../buttons/iconButton/iconButton.component";
+import SpriteIcon from "../icon/icon.component";
+import TextButton, { TEXT_BUTTON_TYPE_CLASSES } from "../buttons/textButton/textButton.component";
+import SortTableBreeds from "../sort-table-breeds/sort-table-breeds.component";
 
 import {
 	Container, 
