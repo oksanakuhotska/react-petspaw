@@ -44,7 +44,10 @@ const BreedsSorted = () => {
     <Container>
       <MainHeader />
       <Body>
-        <TabHeader tabs="Breeds" breed={breeds} />
+        <TabHeader 
+					tabs="Breeds" 
+					breed={breeds}
+				/>
         <SliderContainer>
           {cat.length > 0 && <Slider slides={slides} />}
         </SliderContainer>
