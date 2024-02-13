@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { getData, urlBreeds } from "../../Utills/fetch-data/fetchData.utills";
 import SortTableBreeds from "../sort-table-breeds/sort-table-breeds.component";
-import { DirectoryContainer } from "./breeds-cats-directory.styles";
 import CatsGridCard from "../cats-grid-card/cats-grid-card.component";
+import { TEXT_BUTTON_TYPE_CLASSES } from "../buttons/textButton/textButton.component";
+
+
+import { DirectoryContainer } from "./breeds-cats-directory.styles";
 
 const BreedsCatsDirectory = () => {
   const [breeds, setBreeds] = useState([]);
@@ -77,6 +80,7 @@ const BreedsCatsDirectory = () => {
 								to={`/breeds/${breed.id}`}
 								buttonText={breed.name}
 								keyProp={breed.id}
+								buttonType={TEXT_BUTTON_TYPE_CLASSES.breedsname}
 							/>
             ))}
           </DirectoryContainer>
