@@ -1,4 +1,4 @@
-import { useNavigate, useParams, useLocation  } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import IconButton, { ICON_BUTTON_TYPE_CLASSES } from "../buttons/iconButton/iconButton.component";
 import TextButton, { TEXT_BUTTON_TYPE_CLASSES } from "../buttons/textButton/textButton.component";
 import SpriteIcon from "../icon/icon.component";
@@ -6,8 +6,6 @@ import { Container, BackLink } from "./tab-header.styles";
 
 const TabHeader = ({ tabs, breed }) => {
   const navigate = useNavigate();
-	const { breed: breedParam } = useParams();
-
 
   return (
     <Container>
