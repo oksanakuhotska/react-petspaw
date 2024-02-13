@@ -20,7 +20,9 @@ const TabHeader = ({ tabs, breed }) => {
       <TextButton buttonType={TEXT_BUTTON_TYPE_CLASSES.base}>
 			<BackLink to={`/${tabs.toLowerCase()}`}>{tabs}</BackLink>
 			</TextButton>
-      <TextButton buttonType={TEXT_BUTTON_TYPE_CLASSES.breedsid}>{breed}</TextButton>
+      {breed ? (
+        <TextButton buttonType={TEXT_BUTTON_TYPE_CLASSES.breedsid}>{breed}</TextButton>
+      ) : null}
     </Container>
   );
 };
