@@ -30,8 +30,8 @@ const PagesHeader = () => {
 		cats.forEach((cat) => console.log(cat.breeds[0]?.name));
 		
 		const newFilteredCats = cats.filter(
-  (cat) => cat.breeds[0]?.name.toLowerCase().includes(searchField?.toLowerCase())
-);
+			(cat) => cat.breeds[0]?.name.toLowerCase().includes((searchField ?? '').toLowerCase())
+		);
 	
 		setFilteredCats(newFilteredCats);
 	}, [cats, searchField]);
