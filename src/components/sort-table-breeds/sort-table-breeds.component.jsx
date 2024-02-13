@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { 
-	DropdownButton, 
-	DropdownContainer, 
-	DropdownItem, 
-	DropdownList, 
-	DropdownWrapper, 
-	SortButton 
+  DropdownButton, 
+  DropdownContainer, 
+  DropdownItem, 
+  DropdownList, 
+  DropdownWrapper, 
+  SortButton 
 } from "./sort.table-breeds.styles";
-
 
 const SortTableBreeds = ({
   breeds,
@@ -44,6 +43,11 @@ const SortTableBreeds = ({
     setIsCountOpen(false);
   };
 
+  const handleSelectAll = () => {
+    setCount(breeds.length);
+    setIsCountOpen(false);
+  };
+
   return (
     <>
       {breeds && breeds.length > 0 && (
@@ -72,6 +76,7 @@ const SortTableBreeds = ({
             <DropdownButton onClick={toggleCountDropdown}>{count}</DropdownButton>
             {isCountOpen && (
               <DropdownList>
+                <DropdownItem onClick={handleSelectAll}>Select All</DropdownItem>
                 <DropdownItem onClick={() => handleCountSelect(5)}>5</DropdownItem>
                 <DropdownItem onClick={() => handleCountSelect(10)}>10</DropdownItem>
                 <DropdownItem onClick={() => handleCountSelect(15)}>15</DropdownItem>
