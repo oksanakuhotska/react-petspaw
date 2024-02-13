@@ -10,7 +10,6 @@ import {
   CardButtonWrapper,
   CardLink,
   CenteredButton,
-	SortTable
 } from "./cats-directory.styles";
 
 const CatsDirectory = () => {
