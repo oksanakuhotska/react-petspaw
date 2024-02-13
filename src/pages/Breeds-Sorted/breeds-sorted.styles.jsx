@@ -5,7 +5,7 @@ export const Container = styled.div`
 
 `;
 
-Container.displayName = 'PagesHeader';
+Container.displayName = 'MainHeader';
 
 export const BackLink = styled(NavLink)`
 	text-decoration: none;

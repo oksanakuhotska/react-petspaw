@@ -1,5 +1,5 @@
+import PagesLayout from "../../components/layout/layout.component";
 
-import PagesLayout from "../../components/pages/layout/layout.component";
 
 const Breeds = () => {
 	return (

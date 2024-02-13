@@ -1,9 +1,9 @@
-import PagesHeader from "../../components/pages/page's-header/page's-header.component";
+import MainHeader from "../../components/main-header/main-header.component";
 
 const Voting = () => {
 	return (
 		<>
-			<PagesHeader />
+			<MainHeader />
 			<h2>Voting</h2>
 		</>
 	);

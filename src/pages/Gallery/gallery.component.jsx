@@ -1,10 +1,10 @@
-import PagesHeader from '../../components/pages/page\'s-header/page\'s-header.component';
+import MainHeader from "../../components/main-header/main-header.component";
 
 
 const Gallery = () => {
 	return (
 		<>
-			<PagesHeader />
+			<MainHeader />
 			<h2>Gallery</h2>
 		</>
 	);
