@@ -1,3 +1,14 @@
+import { useState } from "react";
+import { 
+	DropdownButton, 
+	DropdownContainer, 
+	DropdownItem, 
+	DropdownList, 
+	DropdownWrapper, 
+	SortButton 
+} from "./sort.table-breeds.styles";
+
+
 const SortTableBreeds = ({
   breeds,
   selectedBreed,
@@ -10,38 +21,70 @@ const SortTableBreeds = ({
   handleSortZA,
   children,
 }) => {
-  return (
-		<>
-      {breeds && breeds.length > 0 && (
-        <div>
-        <select
-          value={selectedBreed}
-          onChange={(e) => setSelectedBreed(e.target.value)}
-        >
-          <option value="">All Breeds</option>
-          {breeds.map((breed) => (
-            <option key={breed.id} value={breed.name}>
-              {breed.name}
-            </option>
-          ))}
-        </select>
+  const [isBreedOpen, setIsBreedOpen] = useState(false);
+  const [isCountOpen, setIsCountOpen] = useState(false);
 
-        <select
-          value={count}
-          onChange={(e) => setCount(Number(e.target.value))}
-        >
-          <option value={5}>5</option>
-          <option value={10}>10</option>
-          <option value={15}>15</option>
-          <option value={20}>20</option>
-        </select>
-        <button onClick={handleSortAZ}>A-Z</button>
-        <button onClick={handleSortZA}>Z-A</button>
-      </div>
+  const toggleBreedDropdown = () => {
+    setIsBreedOpen(!isBreedOpen);
+    setIsCountOpen(false);
+  };
+
+  const toggleCountDropdown = () => {
+    setIsCountOpen(!isCountOpen);
+    setIsBreedOpen(false);
+  };
+
+  const handleBreedSelect = (breed) => {
+    setSelectedBreed(breed);
+    setIsBreedOpen(false);
+  };
+
+  const handleCountSelect = (count) => {
+    setCount(count);
+    setIsCountOpen(false);
+  };
+
+  return (
+    <>
+      {breeds && breeds.length > 0 && (
+        <DropdownContainer>
+          <DropdownWrapper>
+            <DropdownButton onClick={toggleBreedDropdown}>
+              {selectedBreed ? selectedBreed : "All Breeds"}
+            </DropdownButton>
+            {isBreedOpen && (
+              <DropdownList>
+                <DropdownItem onClick={() => handleBreedSelect("")}>
+                  All Breeds
+                </DropdownItem>
+                {breeds.map((breed) => (
+                  <DropdownItem
+                    key={breed.id}
+                    onClick={() => handleBreedSelect(breed.name)}
+                  >
+                    {breed.name}
+                  </DropdownItem>
+                ))}
+              </DropdownList>
+            )}
+          </DropdownWrapper>
+          <DropdownWrapper>
+            <DropdownButton onClick={toggleCountDropdown}>{count}</DropdownButton>
+            {isCountOpen && (
+              <DropdownList>
+                <DropdownItem onClick={() => handleCountSelect(5)}>5</DropdownItem>
+                <DropdownItem onClick={() => handleCountSelect(10)}>10</DropdownItem>
+                <DropdownItem onClick={() => handleCountSelect(15)}>15</DropdownItem>
+                <DropdownItem onClick={() => handleCountSelect(20)}>20</DropdownItem>
+              </DropdownList>
+            )}
+          </DropdownWrapper>
+          <SortButton onClick={handleSortAZ}>A-Z</SortButton>
+          <SortButton onClick={handleSortZA}>Z-A</SortButton>
+        </DropdownContainer>
       )}
       {children}
     </>
-
   );
 };
 
