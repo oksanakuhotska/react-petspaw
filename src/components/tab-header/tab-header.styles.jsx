@@ -5,7 +5,9 @@ import styled from "styled-components";
 export const Container = styled.div`
 	display: flex;
 	gap: 10px;
-`
+	padding: 20px;
+`;
+Container.displayName = 'Header buttons';
 
 export const BackLink = styled(NavLink)`
 	text-decoration: none;
@@ -20,3 +22,4 @@ export const BackLink = styled(NavLink)`
 		fill: var(--white-color);
 	}
 `;
+
