@@ -29,6 +29,9 @@ export const CardImageOverlay = styled.div`
   width: 100%;
   height: 100%;
   border-radius: var(--border-radius-base);
+  background: var(--accent-color);
+  opacity: 0;
+  transition: opacity 0.35s ease;
 `;
 CardImageOverlay.displayName = "CardImageOverlay";
 
@@ -45,13 +48,6 @@ export const CardButtonWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  ${({ buttonType }) =>
-    buttonType === "TEXT_BUTTON_TYPE_CLASSES.breedsname" &&
-    css`
-      opacity: 1;
-      z-index: 10;
-    `}
 `;
 CardButtonWrapper.displayName = "CardButtonWrapper";
 
@@ -64,12 +60,13 @@ export const ButtonIconWrapper = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
+  opacity: 0;
+  transition: opacity 0.35s ease;
 
-  ${({ buttonType }) =>
-    buttonType === "ICON_BUTTON_TYPE_CLASSES.base" &&
+  ${({ hover }) =>
+    hover &&
     css`
       opacity: 1;
-      z-index: 10;
     `}
 `;
 ButtonIconWrapper.displayName = "ButtonIconWrapper";
@@ -97,49 +94,27 @@ export const ImageContainer = styled.div`
     height: 100%;
     width: 100%;
     object-fit: cover;
-  }
-
-  @media (min-width: 768px) {
-    &:nth-of-type(10n + 1),
-    &:nth-of-type(10n + 4),
-    &:nth-of-type(10n + 8),
-    &:nth-of-type(10n + 9) {
-      grid-row: span 2;
-    }
-
-    &:nth-of-type(10n + 4),
-    &:nth-of-type(10n + 9) {
-      grid-column: span 2;
-    }
+    transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   }
 
   &:hover {
     ${CardImageOverlay} {
-      display: block;
-      transition: var(--transition);
-      background: var(--accent-color);
       opacity: 0.6;
     }
 
     img {
       transform: scale(1.1);
-      transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
     }
 
     ${CardButtonWrapper} {
       opacity: 1;
-      z-index: 10;
+    }
+
+    ${ButtonIconWrapper} {
+      opacity: 1;
     }
   }
-
-  ${({ filtered }) =>
-    filtered &&
-    css`
-      font-size: 1.5em;
-      height: 200px;
-    `}
 `;
-
 ImageContainer.displayName = "CatsImageContainer";
 
 export const CardLink = styled(Link)`
@@ -178,6 +153,7 @@ export const IconButtonStyled = styled(IconButton)`
 export const IconText = styled.span`
   vertical-align: middle;
 `;
+
 
 
 
