@@ -1,3 +1,4 @@
+import ActionLogs from "../../components/action-logs/action-logs.component";
 import MainHeader from "../../components/main-header/main-header.component";
 
 const Voting = () => {
@@ -5,6 +6,7 @@ const Voting = () => {
 		<>
 			<MainHeader />
 			<h2>Voting</h2>
+			<ActionLogs />
 		</>
 	);
 };
