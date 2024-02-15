@@ -82,6 +82,7 @@ export const ImageContainer = styled.div`
   position: relative;
   border-radius: var(--border-radius-base);
   height: 100%;
+  display: grid;
 
   img {
     display: block;
@@ -95,6 +96,20 @@ export const ImageContainer = styled.div`
     width: 100%;
     object-fit: cover;
     transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  }
+
+  @media (min-width: 768px) {
+    &:nth-of-type(10n + 1),
+    &:nth-of-type(10n + 4),
+    &:nth-of-type(10n + 8),
+    &:nth-of-type(10n + 9) {
+      grid-row: span 2;
+    }
+
+    &:nth-of-type(10n + 4),
+    &:nth-of-type(10n + 9) {
+      grid-column: span 2;
+    }
   }
 
   &:hover {
@@ -153,8 +168,6 @@ export const IconButtonStyled = styled(IconButton)`
 export const IconText = styled.span`
   vertical-align: middle;
 `;
-
-
 
 
 
