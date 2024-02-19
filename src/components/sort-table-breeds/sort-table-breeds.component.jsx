@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { 
   DropdownButton, 
   DropdownContainer, 
@@ -46,13 +46,36 @@ const SortTableBreeds = ({
   const handleSelectAll = () => {
     setCount(breeds.length);
     setIsCountOpen(false);
+
   };
+
+	
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isBreedOpen || isCountOpen) {
+        if (
+          !event.target.closest("#breedDropdown") &&
+          !event.target.closest("#countDropdown")
+        ) {
+          setIsBreedOpen(false);
+          setIsCountOpen(false);
+        }
+      }
+    };
+
+    window.addEventListener("click", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+    };
+  }, [isBreedOpen, isCountOpen]);
 
   return (
     <>
       {breeds && breeds.length > 0 && (
         <DropdownContainer>
-          <DropdownWrapper>
+          <DropdownWrapper id="breedDropdown">
             <DropdownButton onClick={toggleBreedDropdown}>
               {selectedBreed ? selectedBreed : "All Breeds"}
             </DropdownButton>
@@ -72,8 +95,10 @@ const SortTableBreeds = ({
               </DropdownList>
             )}
           </DropdownWrapper>
-          <DropdownWrapper>
-            <DropdownButton onClick={toggleCountDropdown}>{count}</DropdownButton>
+          <DropdownWrapper id="countDropdown">
+            <DropdownButton onClick={toggleCountDropdown}>
+              {count}
+            </DropdownButton>
             {isCountOpen && (
               <DropdownList>
                 <DropdownItem onClick={handleSelectAll}>Select All</DropdownItem>
