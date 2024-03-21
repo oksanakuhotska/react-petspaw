@@ -1,4 +1,4 @@
-export const url = `https://api.thecatapi.com/v1/images/search?limit=60&has_breeds=1`;
+export const url = `https://api.thecatapi.com/v1/images/search?limit=10&has_breeds=1`;
 
 export const urlBreeds = `https://api.thecatapi.com/v1/breeds`;
 
