@@ -7,14 +7,20 @@ import TextButton, { TEXT_BUTTON_TYPE_CLASSES } from "../buttons/textButton/text
 import SpriteIcon from "../icon/icon.component";
 
 import { Container, BackLink } from "./tab-header.styles";
+import Modal from "../modal/modal.component";
 
 const TabHeader = ({ tabs, breed }) => {
   const navigate = useNavigate();
-	const [isOpen, setIsOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
-  const openModal = () => setIsOpen(true);
-  const closeModal = () => setIsOpen(false);
+    const openModal = () => {
+      setModalOpen(true);
+    };
 
+    const closeModal = () => {
+      setModalOpen(false);
+    };
+  
   return (
     <Container>
       <IconButton
@@ -29,11 +35,15 @@ const TabHeader = ({ tabs, breed }) => {
       {breed ? (
         <TextButton buttonType={TEXT_BUTTON_TYPE_CLASSES.breedsid}>{breed}</TextButton>
       ) : null}
-			{tabs.toLowerCase() === 'gallery' ? (
-				<TextButton buttonType={TEXT_BUTTON_TYPE_CLASSES.base} onClick={openModal}>
-					{/* <SpriteIcon icon="upload" /> styles */}
-					Upload</TextButton>
-			) : null}
+      {tabs.toLowerCase() === 'gallery' ? (
+      <>
+          <TextButton buttonType={TEXT_BUTTON_TYPE_CLASSES.base} onClick={openModal}>
+            {/* <SpriteIcon icon="upload" /> styles */}
+            Upload
+          </TextButton>
+          {modalOpen && <Modal isOpen={modalOpen} onClose={closeModal}/>}
+      </>
+      ) : null}
     </Container>
   );
 };
