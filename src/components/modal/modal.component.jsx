@@ -1,7 +1,10 @@
 import { useRef, useEffect } from "react";
 
-import { ModalWrapper, ModalContent } from "./modal.styles";
 import Upload from "../upload/upload.component";
+
+import { ModalWrapper, ModalContent, Subtitle, Title, CloseButton } from "./modal.styles";
+import { ICON_BUTTON_TYPE_CLASSES } from "../buttons/iconButton/iconButton.component";
+import SpriteIcon from "../icon/icon.component";
 
 const Modal = ({ isOpen, onClose, children }) => {
   const modalRef = useRef();
@@ -27,9 +30,18 @@ const Modal = ({ isOpen, onClose, children }) => {
   return (
     <ModalWrapper>
       <ModalContent ref={modalRef}>
-				<h1>MODAL</h1>
+				<Title>Upload a .jpg or .png Cat's Image</Title>
+				<Subtitle>Any uploads must comply with the 
+					<a href="https://thecatapi.com/privacy"> upload guidelines </a>
+					or face deletion.
+				</Subtitle>
 				<Upload />
-        <button onClick={onClose}>Close</button>
+					<CloseButton
+						buttonType={ICON_BUTTON_TYPE_CLASSES.reactionhistory}
+						onClick={onClose}
+					>
+						<SpriteIcon icon="close"/>
+					</CloseButton>
       </ModalContent>
     </ModalWrapper>
   );
