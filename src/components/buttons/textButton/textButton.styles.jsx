@@ -32,7 +32,7 @@ export const BaseTextButton = styled.button`
 		transition: var(--transition);
 	}
 `;
-BaseTextButton.displayName = 'BaseTextButton';
+BaseTextButton.displayName = 'Base Text Button';
 
 export const NavCardButton = styled(BaseTextButton)`
 	height: 36px;
@@ -41,7 +41,7 @@ export const NavCardButton = styled(BaseTextButton)`
 	line-height: 133.33%;
 	background-color: var(--white-color);
 `;
-NavCardButton.displayName = 'NavCardButton';
+NavCardButton.displayName = 'Nav Card Button';
 
 //кнопка в грід-картинки BreedsNameButton
 export const BreedsNameButton = styled(BaseTextButton)`
@@ -56,16 +56,11 @@ export const BreedsNameButton = styled(BaseTextButton)`
 	text-decoration: none;
 
 	&:hover {
-		transition: var(--transition);
 		background-color: var(--white-color);
 		color: var(--accent-color);
 	}
-
-	&:active {
-		transition: var(--transition);
-	}
 `;
-BreedsNameButton.displayName = 'BreedsNameButton';
+BreedsNameButton.displayName = 'Breeds Name Button';
 
 export const BreedsId = styled(BaseTextButton)`
 	height: 40px;
@@ -76,4 +71,22 @@ export const BreedsId = styled(BaseTextButton)`
 	color: var(--white-color);
 	padding: 0px 20px;
 `;
-BreedsId.displayName = 'BreedsIdButton';
+BreedsId.displayName = 'Breeds Id Button';
+
+export const UploadPhotoButton = styled(BaseTextButton)`
+	height: 40px;
+	min-width: 172px;
+	font-size: 20px;
+	line-height: 133.33%;
+	background-color: var(--accent-color);
+	color: var(--white-color);
+	padding: 0px 20px;
+	font-size: 12px;
+
+	&:hover {
+		background-color: var(--secondary-color);
+		color: var(--accent-color);
+	}
+`;
+UploadPhotoButton.displayName = 'Upload Photo Button';
+
