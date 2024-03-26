@@ -1,6 +1,7 @@
 import { useRef, useEffect } from "react";
 
 import { ModalWrapper, ModalContent } from "./modal.styles";
+import Upload from "../upload/upload.component";
 
 const Modal = ({ isOpen, onClose, children }) => {
   const modalRef = useRef();
@@ -27,6 +28,7 @@ const Modal = ({ isOpen, onClose, children }) => {
     <ModalWrapper>
       <ModalContent ref={modalRef}>
 				<h1>MODAL</h1>
+				<Upload />
         <button onClick={onClose}>Close</button>
       </ModalContent>
     </ModalWrapper>
