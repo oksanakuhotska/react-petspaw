@@ -3,7 +3,6 @@ import styled, { css } from "styled-components";
 
 import TextButton from "../buttons/textButton/textButton.component";
 import IconButton from "../buttons/iconButton/iconButton.component";
-import { ICON_BUTTON_TYPE_CLASSES } from "../buttons/iconButton/iconButton.component";
 
 export const DirectoryContainer = styled.div`
   display: grid;
