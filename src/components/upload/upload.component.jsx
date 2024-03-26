@@ -1,70 +1,106 @@
 import { useState } from 'react';
 
-import { Container } from "./upload.styles";
+import UploadImage from '../../assets/images/upload-bg-no-image.png';
 
-function Upload() {
+import TextButton, { TEXT_BUTTON_TYPE_CLASSES } from '../buttons/textButton/textButton.component';
+
+import { Container, UploadButton, UploadedImage, UploadInput, UploadLabel, UploadMessage } from "./upload.styles";
+
+const Upload = () => {
+  const [uploadedImage, setUploadedImage] = useState(null);
   const [file, setFile] = useState(null);
-  const [uploading, setUploading] = useState(false);
-  const [uploadedUrl, setUploadedUrl] = useState(null);
-  const [error, setError] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [successMessage, setSuccessMessage] = useState(null);
 
-  const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
+  const handleFileChange = (event) => {
+    const uploadedFile = event.target.files[0];
+    if (uploadedFile) {
+      handleFile(uploadedFile);
+    }
   };
 
-  const handleUpload = async () => {
+  const handleDrop = (event) => {
+    event.preventDefault();
+    const uploadedFile = event.dataTransfer.files[0];
+    if (uploadedFile) {
+      handleFile(uploadedFile);
+    }
+  };
+
+  const handleFile = (uploadedFile) => {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setUploadedImage(reader.result);
+      setFile(uploadedFile);
+      setErrorMessage(null);
+      setSuccessMessage(null);
+    };
+    reader.readAsDataURL(uploadedFile);
+  };
+
+  const handleUpload = () => {
     if (!file) {
-      setError('Please select a file');
+      setErrorMessage('No file selected');
       return;
     }
 
-    setUploading(true);
-    setError(null);
-
-    try {
-      const formData = new FormData();
-      formData.append('file', file);
-
-      // Replace 'YOUR_CATAPI_UPLOAD_URL' with the actual endpoint for file upload on CatAPI
-      const response = await fetch('YOUR_CATAPI_UPLOAD_URL', {
-        method: 'POST',
-        body: formData,
-        headers: {
-          // Replace 'YOUR_API_KEY' with your actual CatAPI key
-          'x-api-key': 'YOUR_API_KEY',
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error('Upload failed');
-      }
-
-      const responseData = await response.json();
-
-      setUploading(false);
-      setUploadedUrl(responseData.url);
-    } catch (error) {
-      setUploading(false);
-      setError('An error occurred while uploading the file');
-      console.error('Upload error:', error);
+    // Перевірка формату файлу (приклад для зображень)
+    const allowedFormats = ['image/jpeg', 'image/png', 'image/gif'];
+    if (!allowedFormats.includes(file.type)) {
+      setErrorMessage('No Cat found - try a different one');
+      return;
     }
+
+    // Додайте ваш код для відправки файлу на API тут
+
+    // Імітація успішного завантаження
+    setTimeout(() => {
+      setSuccessMessage('File uploaded successfully!');
+      setUploadedImage(null);
+      setFile(null);
+    }, 2000);
+  };
+
+  const handleDragOver = (event) => {
+    event.preventDefault();
+  };
+
+  const handleReset = () => {
+    setUploadedImage(null);
+    setFile(null);
+    setErrorMessage(null);
+    setSuccessMessage(null);
   };
 
   return (
-    <div>
-      <input type="file" onChange={handleFileChange} />
-      <button onClick={handleUpload} disabled={uploading}>
-        {uploading ? 'Uploading...' : 'Upload'}
-      </button>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      {uploadedUrl && (
-        <div>
-          <p>File uploaded successfully!</p>
-          <img src={uploadedUrl} alt="Uploaded Cat" style={{ maxWidth: '300px' }} />
-        </div>
+    <>
+      {!uploadedImage && !errorMessage && (
+        <Container
+          style={{ backgroundImage: `url(${UploadImage})` }}
+          onDrop={handleDrop}
+          onDragOver={handleDragOver}
+        >
+          <UploadInput type="file" id="fileInput" onChange={handleFileChange} />
+          <UploadLabel htmlFor="fileInput">Drag & drop file here or click to browse</UploadLabel>
+        </Container>
       )}
-    </div>
+      {!uploadedImage && !errorMessage && <UploadMessage>No file selected</UploadMessage>}
+      {!uploadedImage ? null : (
+        <>
+          <Container style={{ backgroundColor: errorMessage ? 'red' : 'transparent' }}>
+            <UploadedImage src={uploadedImage} alt="Uploaded" />
+          </Container>
+          <UploadMessage>
+            <p>{file.name}</p>
+            {errorMessage && <p>{errorMessage}</p>}
+            {!errorMessage && <TextButton buttonType={TEXT_BUTTON_TYPE_CLASSES.uploadphoto} onClick={handleUpload}>Upload photo</TextButton>}
+            {errorMessage && <TextButton buttonType={TEXT_BUTTON_TYPE_CLASSES.uploadphoto} onClick={handleReset}>Choose another file</TextButton>}
+          </UploadMessage>
+        </>
+      )}
+      {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
+    </>
   );
-}
+};
 
 export default Upload;
