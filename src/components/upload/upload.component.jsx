@@ -42,28 +42,30 @@ const Upload = () => {
       return;
     }
 
-    // Перевірка формату файлу (приклад для зображень)
-    const allowedFormats = ['image/jpeg', 'image/png', 'image/gif'];
-    if (!allowedFormats.includes(file.type)) {
-      setErrorMessage('No Cat found - try a different one');
-      return;
-    }
-
-    // Відправка файлу на сервер за допомогою Fetch API
+    // Встановлення параметрів для відправки на сервер
     const formData = new FormData();
     formData.append('file', file);
+    formData.append('sub_id', 'my-user-1'); // Додатковий параметр 'sub_id'
 
+    // Відправка файлу на сервер за допомогою Fetch API
     try {
-      const response = await fetch('YOUR_API_ENDPOINT', {
+      const response = await fetch('https://api.thecatapi.com/v1/images/upload', {
         method: 'POST',
-        body: formData
+        body: formData,
+        headers: {
+          'x-api-key': 'live_5kUSd1JtpPS034duZAAySNladWpg9zfRH6nbqcD81xdkmtDXeu3ulbPrFnP58P2A' // Заголовок 'x-api-key'
+        }
       });
 
+      // Перевірка відповіді сервера
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
 
+      // Обробка успішної відповіді
+      const data = await response.json();
       setSuccessMessage('File uploaded successfully!');
+      console.log(data); // Вивід додаткової інформації про завантажений файл
     } catch (error) {
       console.error('Error uploading file: ', error);
       setErrorMessage('Error uploading file');
