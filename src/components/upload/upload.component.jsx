@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import UploadImage from '../../assets/images/upload-bg-no-image.png';
 import TextButton, { TEXT_BUTTON_TYPE_CLASSES } from '../buttons/textButton/textButton.component';
-import { Container, UploadButton, UploadedImage, UploadInput, UploadLabel, UploadMessage } from "./upload.styles";
+import { Container, UploadedImage, UploadInput, UploadLabel, UploadMessage } from "./upload.styles";
 
 const Upload = () => {
   const [uploadedImage, setUploadedImage] = useState(null);
