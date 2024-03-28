@@ -1,9 +1,7 @@
 import { useState } from 'react';
 
 import UploadImage from '../../assets/images/upload-bg-no-image.png';
-
 import TextButton, { TEXT_BUTTON_TYPE_CLASSES } from '../buttons/textButton/textButton.component';
-
 import { Container, UploadButton, UploadedImage, UploadInput, UploadLabel, UploadMessage } from "./upload.styles";
 
 const Upload = () => {
@@ -38,7 +36,7 @@ const Upload = () => {
     reader.readAsDataURL(uploadedFile);
   };
 
-  const handleUpload = () => {
+  const handleUpload = async () => {
     if (!file) {
       setErrorMessage('No file selected');
       return;
@@ -51,14 +49,25 @@ const Upload = () => {
       return;
     }
 
-    // Додайте ваш код для відправки файлу на API тут
+    // Відправка файлу на сервер за допомогою Fetch API
+    const formData = new FormData();
+    formData.append('file', file);
 
-    // Імітація успішного завантаження
-    setTimeout(() => {
+    try {
+      const response = await fetch('YOUR_API_ENDPOINT', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
       setSuccessMessage('File uploaded successfully!');
-      setUploadedImage(null);
-      setFile(null);
-    }, 2000);
+    } catch (error) {
+      console.error('Error uploading file: ', error);
+      setErrorMessage('Error uploading file');
+    }
   };
 
   const handleDragOver = (event) => {
